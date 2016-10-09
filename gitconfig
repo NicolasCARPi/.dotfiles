@@ -1,0 +1,28 @@
+[user]
+	name = Nicolas CARPi
+	email = nicolas.carpi@curie.fr
+
+[alias]
+    st = status -sb
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    c = commit -a
+    ch = checkout
+    br = branch -v
+    d = diff
+    g = grep -I
+[color]
+    # colors ftw
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = auto
+[gc]
+    # autoclean/compress
+    auto = 1
+[merge]
+    # better merge message
+    summary = true
+[push]
+	default = tracking

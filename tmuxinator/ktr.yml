@@ -1,0 +1,42 @@
+# ~/.tmuxinator/ktr.yml
+
+name: ktr
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - mail:
+      layout: main-vertical
+      panes:
+        - cd $d && mutt
+  - elabftw:
+      layout: 70c7,204x69,0,0{152x69,0,0,11,51x69,153,0,12}
+      panes:
+        - cd $dev/elabftw
+        - cd $dev/elabftw
+  - elabctl:
+      panes:
+        - cd $dev/elabctl
+  - docker-elabftw:
+      panes:
+        - cd $dev/docker-elabftw
+  - logs:
+      panes:
+        - docker exec -it elabftw tail -f /var/log/nginx/error.log
+
+# list layout with: tmux list-windows
+#1: dev* (3 panes) [235x71] [layout 0192,235x71,0,0[235x59,0,0,1,235x11,0,60{141x11,0,60,4,93x11,142,60,5}]] @1 (active)

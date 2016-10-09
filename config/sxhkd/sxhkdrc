@@ -1,0 +1,108 @@
+# bspwm hotkeys
+# .config/sxhkd/sxhkdrc
+# https://github.com/NicolasCARPi/.dotfiles
+
+# quit
+super + shift + e
+	bspc quit
+
+# kill window
+super + {q,a}
+	bspc node -{c,k}
+
+# lock the window
+super + l
+    bspc node -g locked
+
+super + b
+    bspc desktop -B
+
+# maximize window (monocle)
+super + p
+	bspc desktop -l next
+
+# shift space to float
+super + shift + space
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# hide ALL windows
+super + shift + h
+    bspc control --toggle-visibility
+
+# go to last window/desktop
+super + {Tab,Escape}
+	bspc {node,desktop} -f last
+
+# select next window apparition position
+super + ctrl + {c,t,s,r}
+    bspc node -p {west,south,north,east}
+
+# put window in the biggest space
+super + m
+	bspc node -s biggest
+
+# focus windows or move it around with shift
+super + {_,shift + }{c,t,s,r}
+	bspc node -{f,s} {west,south,north,east}
+
+# click to focus (but hover works also)
+~button1
+	bspc pointer -g focus
+
+# resize with mouse
+super + button{1-3}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+super + !button{1-3}
+	bspc pointer -t %i %i
+
+super + @button{1-3}
+	bspc pointer -u
+
+# switch to desktop with numbers directly (bépo keyboard)
+super + {quotedbl,guillemotleft,guillemotright,parenleft,parenright,at,plus,minus,slash}
+    bspc desktop -f {1-9}
+
+# use arrow keys to navigate desktops
+super + {Left,Right}
+    bspc desktop -f {prev,next}
+
+# send window to desktop
+super + shift + {1-9}
+    bspc window -d {1-9}
+
+#### WM INDEPENDENT HOTKEYS
+# lock window
+super + dollar
+    sh ~/.bin/lock.sh
+    #slock
+
+# terminal emulator
+super + Return
+	urxvtc
+
+# browser
+#super + shift + f
+#    firefox
+
+# browser
+super + shift + f
+    firefox
+    #chromium --no-proxy-server
+
+# file manager
+super + n
+    dbus-launch pcmanfm $d
+
+# app launcher
+super + d
+	dmenu_run
+
+# toggle music
+super + space
+    ~/.bin/toggle.sh
+
+#### SXHKD
+# reload config
+super + shift + Escape
+	pkill -USR1 -x sxhkd

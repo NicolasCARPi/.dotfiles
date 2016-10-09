@@ -1,0 +1,9 @@
+# use elinks to view html emails in mutt
+text/html; elinks -dump -dump-charset utf-8 -default-mime-type text/html %s; needsterminal; copiousoutput;
+application/pdf; evince '%s'
+image/png; gpicview '%s'
+image/jpeg; gpicview '%s'
+application/msword; libreoffice '%s'
+application/vnd.openxm; libreoffice '%s'
+application/vnd.openxm; libreoffice '%s'
+application/vnd.ms-exec; libreoffice '%s'
