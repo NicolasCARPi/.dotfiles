@@ -28,12 +28,15 @@ windows:
       panes:
         - cd $dev/elabftw
         - cd $dev/elabftw
+  - elabdoc:
+      panes:
+        - cd $dev/elabdoc
   - elabctl:
       panes:
         - cd $dev/elabctl
   - docker-elabftw:
       panes:
-        - cd $dev/docker-elabftw
+        - cd $dev/elabimg
   - logs:
       panes:
         - docker exec -it elabftw tail -f /var/log/nginx/error.log
