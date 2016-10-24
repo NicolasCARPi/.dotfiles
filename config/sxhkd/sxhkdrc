@@ -29,6 +29,10 @@ super + shift + space
 super + shift + h
     bspc control --toggle-visibility
 
+# toggle focus follows mouse
+super + alt + space
+    bspc config focus_follows_pointer toggle
+
 # go to last window/desktop
 super + {Tab,Escape}
 	bspc {node,desktop} -f last
