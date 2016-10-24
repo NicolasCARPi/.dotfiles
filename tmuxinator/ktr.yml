@@ -28,6 +28,9 @@ windows:
       panes:
         - cd $dev/elabftw
         - cd $dev/elabftw
+  - elabdoc:
+      panes:
+        - cd $dev/elabdoc
   - elabctl:
       panes:
         - cd $dev/elabctl
