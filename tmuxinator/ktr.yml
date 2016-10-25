@@ -34,7 +34,7 @@ windows:
   - elabctl:
       panes:
         - cd $dev/elabctl
-  - docker-elabftw:
+  - elabimg:
       panes:
         - cd $dev/elabimg
   - logs:
