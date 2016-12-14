@@ -13,3 +13,9 @@ alias free='free -h'
 alias g='git'
 alias serve='python2 -m SimpleHTTPServer'
 alias dmesg='dmesg -H'
+# before it was d for Desktop
+if [[ $(hostname) == "kwala" ]]; then
+    export d=~
+else
+    export d=~/tmp
+fi
