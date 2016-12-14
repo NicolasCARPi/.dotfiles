@@ -19,3 +19,4 @@ if [[ $(hostname) == "kwala" ]]; then
 else
     export d=~/tmp
 fi
+alias mutt='cd $d && mutt'
