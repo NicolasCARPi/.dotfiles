@@ -82,7 +82,7 @@ export GOPATH=/srv/http/go
 
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions.zsh
 # change color of autocomplete
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 
