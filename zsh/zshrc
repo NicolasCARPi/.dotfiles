@@ -34,12 +34,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^f' edit-command-line
 
-# before it was d for Desktop
-if [[ $(hostname) == "kwala" ]]; then
-    export d=~
-else
-    export d=~/tmp
-fi
 # vim <3
 export EDITOR="vim"
 
@@ -88,7 +82,7 @@ export GOPATH=/srv/http/go
 
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions.zsh
 # change color of autocomplete
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 
@@ -129,7 +123,9 @@ function e () {
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
 [[ -r ${HOME}/.zsh/tmuxinator.zsh ]] && source ${HOME}/.zsh/tmuxinator.zsh
 
-if ! tmux list-sessions > /dev/null 2>&1; then
-    tmuxinator ktr
+if [ "$TERM" != "linux" ] ; then
+    if ! tmux list-sessions > /dev/null 2>&1; then
+        tmuxinator ktr
+    fi
 fi
 # /K\

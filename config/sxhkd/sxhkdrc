@@ -73,7 +73,7 @@ super + {Left,Right}
 
 # send window to desktop
 super + shift + {1-9}
-    bspc window -d {1-9}
+    bspc node -d {1-9}
 
 #### WM INDEPENDENT HOTKEYS
 # lock window
