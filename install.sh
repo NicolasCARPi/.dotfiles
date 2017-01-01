@@ -18,4 +18,4 @@ ln -s -i ~/.dotfiles/config/awesome ~/.config/awesome
 ln -s -i ~/.dotfiles/config/mpd ~/.config/mpd
 ln -s ~/.dotfiles/config/bspwm ~/.config/bspwm
 ln -s ~/.dotfiles/config/sxhkd ~/.config/sxhkd
-
+ln -s ~/.dotfiles/octaverc ~/.octaverc
