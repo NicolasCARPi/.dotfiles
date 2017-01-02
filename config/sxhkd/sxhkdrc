@@ -43,7 +43,7 @@ super + ctrl + {c,t,s,r}
 
 # put window in the biggest space
 super + m
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 # focus windows or move it around with shift
 super + {_,shift + }{c,t,s,r}
