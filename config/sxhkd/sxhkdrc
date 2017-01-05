@@ -83,7 +83,7 @@ super + dollar
 
 # terminal emulator
 super + Return
-	urxvtc
+	urxvt
 
 # browser
 #super + shift + f
