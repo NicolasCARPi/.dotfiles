@@ -31,7 +31,7 @@ super + shift + h
 
 # toggle focus follows mouse
 super + alt + space
-    bspc config focus_follows_pointer toggle
+    toggle-mouse-focus.sh
 
 # go to last window/desktop
 super + {Tab,Escape}
