@@ -33,6 +33,10 @@ super + shift + h
 super + alt + space
     toggle-mouse-focus.sh
 
+# put window on top
+super + Up
+    bspc node -l above
+
 # go to last window/desktop
 super + {Tab,Escape}
 	bspc {node,desktop} -f last
