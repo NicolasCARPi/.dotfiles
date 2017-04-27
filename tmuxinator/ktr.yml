@@ -37,6 +37,9 @@ windows:
   - elabimg:
       panes:
         - cd $dev/elabimg
+  - elabapy:
+      panes:
+        - cd $dev/elabapy
 
 # list layout with: tmux list-windows
 #1: dev* (3 panes) [235x71] [layout 0192,235x71,0,0[235x59,0,0,1,235x11,0,60{141x11,0,60,4,93x11,142,60,5}]] @1 (active)

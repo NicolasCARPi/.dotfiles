@@ -13,6 +13,12 @@ alias free='free -h'
 alias g='git'
 alias serve='python2 -m SimpleHTTPServer'
 alias dmesg='dmesg -H'
+alias tesla='vncviewer 192.168.102.122'
+alias pielcommon='vncviewer 192.168.102.6'
+alias mvideopiel='vncviewer 192.168.102.14'
+alias bigasscpu='vncviewer 192.168.102.82'
+alias axiom='vncviewer 192.168.102.131'
+
 # before it was d for Desktop
 if [[ $(hostname) == "kwala" ]]; then
     export d=~

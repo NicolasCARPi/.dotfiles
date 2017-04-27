@@ -46,7 +46,7 @@ else
     export PROMPT="%{$fg[white]%}┌─[%{$fg[green]%}%n%{$fg[cyan]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}]%{$fg[yellow]%}-%{$fg[white]%}[%{$fg[cyan]%}%*%{$fg[white]%}]%{$reset_color%}%{$reset_color%}"$'\n'"%{$fg[white]%}└─>%{$reset_color%} "
 fi
 
-PATH=~/.bin:/srv/http/go/bin:~/.gem/ruby/2.3.0/bin:$PATH
+PATH=~/.bin:/srv/http/go/bin:~/.gem/ruby/2.4.0/bin:~/.gem/ruby/2.3.0/bin:$PATH
 export PATH
 
 # to have nice colors in ls
