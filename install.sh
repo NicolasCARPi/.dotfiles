@@ -13,7 +13,7 @@ ln -s -i ~/.dotfiles/Xdefaults ~/.Xdefaults
 ln -s -i ~/.dotfiles/mailcap ~/.mailcap
 ln -s -i ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/tmuxinator ~/.tmuxinator
-mkdir ~/.config
+mkdir -p ~/.config
 ln -s -i ~/.dotfiles/config/awesome ~/.config/awesome
 ln -s -i ~/.dotfiles/config/mpd ~/.config/mpd
 ln -s ~/.dotfiles/config/bspwm ~/.config/bspwm
