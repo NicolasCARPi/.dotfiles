@@ -18,6 +18,7 @@ alias pielcommon='vncviewer 192.168.102.6'
 alias mvideopiel='vncviewer 192.168.102.14'
 alias bigasscpu='vncviewer 192.168.102.82'
 alias axiom='vncviewer 192.168.102.131'
+alias europa='vncviewer 192.168.102.134'
 
 # before it was d for Desktop
 if [[ $(hostname) == "kwala" ]]; then
