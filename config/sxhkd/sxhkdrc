@@ -60,9 +60,6 @@ super + {_,shift + }{c,t,s,r}
 super + ~button1
     bspc node -l above
 
-# resize with mouse
-super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
 
 #super + !button{1-3}
 #	bspc pointer -t %i %i
