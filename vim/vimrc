@@ -117,6 +117,9 @@ let g:syntastic_check_on_wq = 0
 " Ctrl-t to close HTML tags
 au FileType html,xml,xsl,php,erb source ~/.vim/bundle/closetag.vim
 
+" use html syntax for twig templates
+au FileType twig set syntax=html
+
 " STATUS LINE
 set laststatus=2
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
