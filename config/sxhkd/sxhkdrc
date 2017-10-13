@@ -60,6 +60,11 @@ super + {_,shift + }{c,t,s,r}
 super + ~button1
     bspc node -l above
 
+# resize window
+super + alt + ctrl + r
+    bspc node --resize right 20 0
+super + alt + ctrl + c
+    bspc node --resize left -20 0
 
 #super + !button{1-3}
 #	bspc pointer -t %i %i
@@ -83,15 +88,10 @@ super + shift + {1-9}
 # lock window
 super + dollar
     sh ~/.bin/lock.sh
-    #slock
 
 # terminal emulator
 super + Return
 	urxvt
-
-# browser
-#super + shift + f
-#    firefox
 
 # browser
 super + shift + f
