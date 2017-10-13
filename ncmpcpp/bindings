@@ -384,6 +384,14 @@ def_key "backspace"
 def_key "A"
   select_found_items
 #
+# https://github.com/arybczak/ncmpcpp/issues/221
+def_key "/"
+  push_character "ctrl-u"
+  find_item_forward
+
+def_key "?"
+  push_character "ctrl-u"
+  find_item_backward
 #def_key "/"
 #  find
 #
