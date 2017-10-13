@@ -119,6 +119,7 @@ au FileType html,xml,xsl,php,erb source ~/.vim/bundle/closetag.vim
 
 " use html syntax for twig templates
 au FileType twig set syntax=html
+au FileType html.twig set syntax=html
 
 " STATUS LINE
 set laststatus=2
