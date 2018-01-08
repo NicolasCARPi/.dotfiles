@@ -11,9 +11,7 @@ alias c='clear'
 alias df='df -h'
 alias free='free -h'
 alias g='git'
-export TODO="$HOME/.share/TODO"
-alias todo="vim $TODO"
-alias serve='python2 -m SimpleHTTPServer'
+alias serve='python2 -m SimpleHTTPServer 8888'
 alias dmesg='dmesg -H'
 alias tesla='vncviewer 192.168.102.122'
 alias pielcommon='vncviewer 192.168.102.6'
@@ -21,6 +19,8 @@ alias mvideopiel='vncviewer 192.168.102.14'
 alias bigasscpu='vncviewer 192.168.102.82'
 alias axiom='vncviewer 192.168.102.131'
 alias europa='vncviewer 192.168.102.134'
+alias symux='vncviewer 192.168.102.19'
+alias mvideodam='vncviewer 192.168.102.147'
 
 # before it was d for Desktop
 if [[ $(hostname) == "kwala" ]]; then
@@ -28,6 +28,6 @@ if [[ $(hostname) == "kwala" ]]; then
 else
     export d=~/tmp
 fi
-alias mutt='cd $d && mutt'
-alias m='cd $d && \mutt'
+alias mutt='~/.bin/mount-share.sh && cd $d && mutt'
+alias m='mutt'
 export s=~/.share
