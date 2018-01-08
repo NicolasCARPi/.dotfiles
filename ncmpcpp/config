@@ -531,9 +531,8 @@ main_window_color = green
 #
 color1 = green
 #
-color2 = green
+color2 = white
 #
-main_window_highlight_color = green
 #
 progressbar_color = green
 #
@@ -543,7 +542,10 @@ progressbar_elapsed_color = white
 #
 #alternative_ui_separator_color = black
 #
-active_column_color = white
+current_item_prefix = "$(white)$r"
+current_item_suffix = "$/r$(end)"
+current_item_inactive_column_prefix = "$(green)$r"
+current_item_inactive_column_suffix = "$/r$(end)"
 #
 visualizer_color = white
 #
