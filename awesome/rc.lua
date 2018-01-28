@@ -13,6 +13,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
 require("awful.hotkeys_popup.keys.vim")
 
+local home_dir = "/home/ktr/"
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -100,10 +101,17 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end}
 }
 
---mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
---                                    { "open terminal", terminal }
---                                  }
---                        })
+mymainmenu = awful.menu({ items = { { "music", terminal .. " -e ncmpcpp", beautiful.music_icon },
+                                    { "filezilla", function() awful.util.spawn("filezilla") end, beautiful.filezilla_icon },
+                                    { "awesome", myawesomemenu, beautiful.awesome_icon }
+                                  }
+                        })
+-- custom navigation keys for menu
+awful.menu.menu_keys.down = { "t", "Down" }
+awful.menu.menu_keys.up= { "s", "Up" }
+awful.menu.menu_keys.back= { "c", "Left" }
+awful.menu.menu_keys.exec= { "r", "Right", "Return" }
+awful.menu.menu_keys.close = { "Escape", "Tab" }
 
 --mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --mylauncher = awful.widget.launcher({ image = "/home/ktr/.config/awesome/themes/ktr/wala.png",
@@ -241,8 +249,8 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    -- awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
-     --         {description="show help", group="awesome"}),
+    awful.key({ modkey,           }, "b",      hotkeys_popup.show_help,
+              {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
@@ -263,8 +271,9 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-     --         {description = "show main menu", group = "awesome"}),
+    -- menu with w
+    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+              {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "t", function () awful.client.swap.byidx(  1)    end,
@@ -289,13 +298,18 @@ globalkeys = gears.table.join(
     -- Standard program
 
     -- ktr shortcuts
-    awful.key({ modkey,           }, "space", function () awful.util.spawn("toggle.sh") end),
+    awful.key({ modkey,           }, "space", function () awful.util.spawn("toggle.sh") end,
+            {description = "toggle music", group = "utils"}),
     -- $ to lock screen with slock
-    awful.key({ modkey,           }, "$", function () awful.util.spawn("slock") end),
-    -- k to kill mplayer
-    awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end),
+    awful.key({ modkey,           }, "$", function () awful.util.spawn("slock") end,
+            {description = "lock screen", group = "utils"}),
+    -- k to kill player
+    awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end,
+            {description = "kill vlc", group = "utils"}),
+
     -- shift f for firefox
-    awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end),
+    awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end,
+            {description = "launch firefox", group = "launcher"}),
     -- n to have filemanager
     awful.key({ modkey,           }, "n", function () awful.util.spawn("dbus-launch pcmanfm") end,
               {description = "open file browser", group = "launcher"}),
@@ -508,12 +522,14 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = true }
     },
 
+    { rule = { class = "ncmpcpp" },
+        properties = { tag = "8" } },
     -- Set Firefox to always map on the tag named "2" on screen 1.
     { rule = { class = "Firefox" },
         properties = { screen = 1, tag = "2" } },
     -- filezilla on 4
     { rule = { class = "Filezilla" },
-        properties = { screen = 1, tag = "4" } },
+        properties = { screen = 1, tag = "4", switchtotag = true } },
 }
 -- }}}
 

@@ -3,6 +3,7 @@
 -------------------------------
 
 local themes_path = require("gears.filesystem").get_themes_dir()
+local theme_path = "/home/ktr/.config/awesome/themes/ktr/"
 
 -- {{{ Main
 local theme = {}
@@ -80,6 +81,8 @@ theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
 
 -- {{{ Misc
 theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
+theme.music_icon = theme_path .. "music.png"
+theme.filezilla_icon = theme_path .. "filezilla.png"
 theme.menu_submenu_icon      = themes_path .. "default/submenu.png"
 -- }}}
 
