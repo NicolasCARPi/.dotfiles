@@ -100,14 +100,14 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end}
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+--mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+--                                    { "open terminal", terminal }
+--                                  }
+--                        })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+--mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --mylauncher = awful.widget.launcher({ image = "/home/ktr/.config/awesome/themes/ktr/wala.png",
-                                     menu = mymainmenu })
+--                                     menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -214,7 +214,7 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
+            --mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
@@ -233,7 +233,7 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
+    --awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -263,8 +263,8 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              {description = "show main menu", group = "awesome"}),
+    --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+     --         {description = "show main menu", group = "awesome"}),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "t", function () awful.client.swap.byidx(  1)    end,
@@ -311,7 +311,8 @@ globalkeys = gears.table.join(
     --awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
     --          {description = "select previous", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "h",
+    -- unhide
+    awful.key({ modkey, "Shift" }, "h",
               function ()
                   local c = awful.client.restore()
                   -- Focus restored client
@@ -505,8 +506,11 @@ awful.rules.rules = {
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Firefox" },
+        properties = { screen = 1, tag = "2" } },
+    -- filezilla on 4
+    { rule = { class = "Filezilla" },
+        properties = { screen = 1, tag = "4" } },
 }
 -- }}}
 
