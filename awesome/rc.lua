@@ -39,8 +39,8 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/ktr/theme.lua")
+-- load ktr theme
+beautiful.init("/home/ktr/.config/awesome/themes/ktr/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -105,8 +105,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                   }
                         })
 
--- mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-mylauncher = awful.widget.launcher({ image = "/home/ktr/.config/awesome/themes/ktr/wala.png",
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
+--mylauncher = awful.widget.launcher({ image = "/home/ktr/.config/awesome/themes/ktr/wala.png",
                                      menu = mymainmenu })
 
 -- Menubar configuration

@@ -1,12 +1,13 @@
 -------------------------------
---  "ktr" awesome theme  --
+--  "Zenburn" awesome theme  --
+--    By Adrian C. (anrxc)   --
 -------------------------------
 
 local themes_path = require("gears.filesystem").get_themes_dir()
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = "/home/ktr/.wallpapers/iss.jpg"
+theme.wallpaper = themes_path .. "zenburn/zenburn-background.png"
 -- }}}
 
 -- {{{ Styles
