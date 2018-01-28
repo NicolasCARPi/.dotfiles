@@ -13,10 +13,12 @@ theme.wallpaper = "/home/ktr/.wallpapers/iss.jpg"
 theme.font      = "sans 8"
 
 -- {{{ Colors
-theme.fg_normal  = "#DCDCCC"
-theme.fg_focus   = "#F0DFAF"
+theme.fg_normal  = "#00FF33"
+--theme.fg_focus   = "#F0DFAF"
+theme.fg_focus   = "#FFFFFF"
 theme.fg_urgent  = "#CC9393"
-theme.bg_normal  = "#3F3F3F"
+--theme.bg_normal  = "#3F3F3F"
+theme.bg_normal  = "#000000"
 theme.bg_focus   = "#1E2320"
 theme.bg_urgent  = "#3F3F3F"
 theme.bg_systray = theme.bg_normal
@@ -32,7 +34,7 @@ theme.border_marked = "#CC9393"
 
 -- {{{ Titlebars
 theme.titlebar_bg_focus  = "#3F3F3F"
-theme.titlebar_bg_normal = "#3F3F3F"
+theme.titlebar_bg_normal = "#000000"
 -- }}}
 
 -- There are other variable sets

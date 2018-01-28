@@ -287,6 +287,18 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
+
+    -- ktr shortcuts
+    awful.key({ modkey,           }, "space", function () awful.util.spawn("toggle.sh") end),
+    -- $ to lock screen with slock
+    awful.key({ modkey,           }, "$", function () awful.util.spawn("slock") end),
+    -- k to kill mplayer
+    awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end),
+    -- shift f for firefox
+    awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end),
+    -- n to have filemanager
+    awful.key({ modkey,           }, "n", function () awful.util.spawn("dbus-launch pcmanfm") end,
+              {description = "open file browser", group = "launcher"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
@@ -349,16 +361,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    -- ktr shortcuts
-    awful.key({ modkey,           }, "space", function () awful.util.spawn("toggle.sh") end),
-    -- $ to lock screen with slock
-    awful.key({ modkey,           }, "$", function () awful.util.spawn("slock") end),
-    -- n to have filemanager
-    awful.key({ modkey,           }, "n", function () awful.util.spawn("dbus-launch pcmanfm") end),
-    -- k to kill mplayer
-    awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end),
-    -- shift f for firefox
-    awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end),
+    -- close client with a or q
     awful.key({ modkey,   }, "a",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey,   }, "q",      function (c) c:kill()                         end,
