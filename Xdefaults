@@ -3,7 +3,7 @@
 !   -----
 URxvt*buffered: true
 ! Green text
-URxvt*foreground: green
+URxvt*foreground: #00FF00
 URxvt*cursorColor: yellow
 URxvt*underlineColor: #8FC45A
 URxvt*font:xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true

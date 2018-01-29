@@ -14,12 +14,14 @@ theme.wallpaper = "/home/ktr/.wallpapers/iss.jpg"
 theme.font      = "sans 8"
 
 -- {{{ Colors
-theme.fg_normal  = "#00FF33"
+local green = "#00FF00"
+local black = "#000000"
+theme.fg_normal  = green
 --theme.fg_focus   = "#F0DFAF"
 theme.fg_focus   = "#FFFFFF"
 theme.fg_urgent  = "#CC9393"
 --theme.bg_normal  = "#3F3F3F"
-theme.bg_normal  = "#000000"
+theme.bg_normal  = black
 theme.bg_focus   = "#1E2320"
 theme.bg_urgent  = "#3F3F3F"
 theme.bg_systray = theme.bg_normal
