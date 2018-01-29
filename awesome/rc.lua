@@ -530,7 +530,7 @@ awful.rules.rules = {
         properties = { tag = "8" } },
     -- Set Firefox to always map on the tag named "2" on screen 1.
     { rule = { class = "Firefox" },
-        properties = { screen = 1, tag = "2" } },
+        properties = { screen = 1, tag = "2", switchtotag = true } },
     -- filezilla on 4
     { rule = { class = "Filezilla" },
         properties = { screen = 1, tag = "4", switchtotag = true } },
