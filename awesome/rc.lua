@@ -14,6 +14,10 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys.vim")
 
 local home_dir = "/home/ktr/"
+
+-- global var to make the focus follow the mouse
+--make_sloppy = true
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -271,6 +275,10 @@ globalkeys = gears.table.join(
         end,
         {description = "focus previous by index", group = "client"}
     ),
+
+    -- toggle sloppy focus
+    --awful.key({ modkey, "Alt"}, "space", function() make_sloppy = not make_sloppy end,
+     --       {description = "toggle mouse focus", group = "awesome"}),
     -- menu with w
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
@@ -595,12 +603,13 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-        and awful.client.focus.filter(c) then
-        client.focus = c
-    end
-end)
+--client.connect_signal("mouse::enter", function(c)
+--    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+--        and awful.client.focus.filter(c)
+--        and make_sloppy then
+--            client.focus = c
+--    end
+--end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
