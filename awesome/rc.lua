@@ -41,7 +41,7 @@ end
 
 -- {{{ Variable definitions
 -- load ktr theme
-beautiful.init("/home/ktr/.config/awesome/themes/ktr/theme.lua")
+beautiful.init(home_dir .. ".config/awesome/themes/ktr/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
