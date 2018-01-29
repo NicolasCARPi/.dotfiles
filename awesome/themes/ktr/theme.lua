@@ -7,7 +7,7 @@ local theme_path = "/home/ktr/.config/awesome/themes/ktr/"
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = "/home/ktr/.wallpapers/iss.jpg"
+theme.wallpaper = "/home/ktr/.wallpapers/cthulhu.jpg"
 -- }}}
 
 -- {{{ Styles
