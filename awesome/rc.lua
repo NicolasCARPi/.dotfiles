@@ -522,6 +522,10 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = true }
     },
 
+    -- remove titlebar for terminal
+    { rule = { name = "urxvt" },
+        properties = { titlebars_enabled = false } },
+    -- NOT WORKING FIXME
     { rule = { class = "ncmpcpp" },
         properties = { tag = "8" } },
     -- Set Firefox to always map on the tag named "2" on screen 1.
