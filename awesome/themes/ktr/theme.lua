@@ -28,13 +28,14 @@ theme.bg_systray = theme.bg_normal
 -- {{{ Borders
 theme.useless_gap   = 0
 theme.border_width  = 2
-theme.border_normal = "#3F3F3F"
+--theme.border_normal = "#3F3F3F"
+theme.border_normal = "#454649"
 theme.border_focus  = "#aFaFaF"
 theme.border_marked = "#CC9393"
 -- }}}
 
 -- {{{ Titlebars
-theme.titlebar_bg_focus  = "#3F3F3F"
+theme.titlebar_bg_focus  = "#454649"
 theme.titlebar_bg_normal = "#000000"
 -- }}}
 
