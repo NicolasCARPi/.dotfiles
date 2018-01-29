@@ -2,12 +2,14 @@
 --  "ktr" awesome theme  --
 -------------------------------
 
-local themes_path = require("gears.filesystem").get_themes_dir()
-local theme_path = "/home/ktr/.config/awesome/themes/ktr/"
+--local themes_path = require("gears.filesystem").get_themes_dir()
+local home_dir = "/home/ktr/"
+local theme_path = home_dir .. ".config/awesome/themes/ktr/"
 
 -- {{{ Main
 local theme = {}
-theme.wallpaper = "/home/ktr/.wallpapers/cthulhu.jpg"
+-- curent.jpg is a symlink to real wallpaper
+theme.wallpaper = home_dir .. ".wallpapers/current.jpg"
 -- }}}
 
 -- {{{ Styles
