@@ -301,7 +301,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "space", function () awful.util.spawn("toggle.sh") end,
             {description = "toggle music", group = "utils"}),
     -- $ to lock screen with slock
-    awful.key({ modkey,           }, "$", function () awful.util.spawn("slock") end,
+    awful.key({ modkey,           }, "$", function () awful.util.spawn("lock.sh") end,
             {description = "lock screen", group = "utils"}),
     -- k to kill player
     awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end,
