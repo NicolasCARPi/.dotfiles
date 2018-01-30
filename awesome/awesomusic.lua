@@ -39,7 +39,7 @@ function awesomusic:show_song()
                 -- nothing is playing
                 return false
             end
-            if out[2]:match("random: off") then
+            if out[2]:match("random: on") then
                 rand_txt = " (Z)"
 
                 --rand_icon:set_image(path_to_config .. "pacman.png")
