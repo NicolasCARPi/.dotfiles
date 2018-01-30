@@ -61,11 +61,11 @@ function awesomusic:prev()
     os.execute("mpc prev")
 end
 
--- shuffle
-function awesomusic:shuffle()
-    os.execute("mpc shuffle")
+-- toggle random
+function awesomusic:random()
+    os.execute("mpc random")
     naughty.notify {
-        text = "Shuffle activated",
+        text = "Random mode clicked",
         title = "Info",
         timeout = 5, hover_timeout = 0.5,
         width = 400,
@@ -93,7 +93,7 @@ awesomusic:connect_signal("button::press", function(_, _, _, button)
     if (button == 3) then awesomusic:skip() end
     -- middle click
     --if (button == 2) then awesomusic:prev() end
-    if (button == 2) then awesomusic:shuffle() end
+    if (button == 2) then awesomusic:random() end
     -- scroll up
     if (button == 4) then awesomusic:vol("+") end
     -- scroll down
