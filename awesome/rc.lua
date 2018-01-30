@@ -121,6 +121,11 @@ awful.menu.menu_keys.close = { "Escape", "Tab" }
 --mylauncher = awful.widget.launcher({ image = "/home/ktr/.config/awesome/themes/ktr/wala.png",
 --                                     menu = mymainmenu })
 
+local awesomusic = require("awesomusic")
+
+local pacman = require("pacman")
+
+
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
@@ -132,10 +137,6 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
--- pacman package updates counter
-mypacman = wibox.widget{
-    widget = wibox.widget.textbox
-}
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -235,7 +236,8 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
-            mypacman,
+            awesomusic,
+            pacman,
             mytextclock,
             s.mylayoutbox,
         },
@@ -314,6 +316,9 @@ globalkeys = gears.table.join(
     -- k to kill player
     awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end,
             {description = "kill vlc", group = "utils"}),
+    -- assign print key
+    awful.key({ }, "Print", function () awful.util.spawn("scrot") end,
+            {description = "take screenshot", group = "utils"}),
 
     -- shift f for firefox
     awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end,
