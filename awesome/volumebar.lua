@@ -59,7 +59,9 @@ volumebar:connect_signal("button::press", function(_,_,_,button)
     -- scroll down
     elseif (button == 5) then awful.spawn("amixer set PCM 2dB-", false)
     -- left click
-    elseif (button == 1) then awful.spawn("mpc play", false)
+    elseif (button == 1) then awful.spawn("mpc toggle", false)
+    -- right click
+    elseif (button == 3) then awful.spawn("mpc stop", false)
     end
 
     spawn.easy_async(request_command, function(stdout, stderr, exitreason, exitcode)
