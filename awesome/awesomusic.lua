@@ -9,6 +9,11 @@ local naughty = require("naughty")
 
 local awesomusic = wibox.widget.textbox()
 
+path_to_config = "/home/ktr/.config/awesome/"
+
+--rand_icon = wibox.widget.imagebox()
+--rand_icon:set_image(path_to_config .. "pacman.png")
+
 -- for some reason the | head -n 1 is not working so we need to split the stdout
 function awesomusic:split(input_str, sep)
     if sep == nil then
@@ -25,12 +30,19 @@ end
 
 -- display current song
 function awesomusic:show_song()
-    watch("mpc status", 3,
+    watch("mpc status", 2,
         function(widget, stdout, stderr, exitreason, exitcode)
+            --local rand_icon = ""
+            local rand_txt = ""
             out = awesomusic:split(stdout)
             if out[0]:match("^volume") then
                 -- nothing is playing
                 return false
+            end
+            if out[2]:match("random: off") then
+                rand_txt = " (Z)"
+
+                --rand_icon:set_image(path_to_config .. "pacman.png")
             end
             -- status is first line
             status = out[0]
@@ -44,7 +56,7 @@ function awesomusic:show_song()
             --local vol = line_split[4]
             --local vol = "A"
             --out = status .. " | " .. vol .. " | "
-            out = status .. " "
+            out = status .. rand_txt .. " "
             widget:set_text(out)
         end,
         awesomusic
@@ -64,12 +76,6 @@ end
 -- toggle random
 function awesomusic:random()
     os.execute("mpc random")
-    naughty.notify {
-        text = "Random mode clicked",
-        title = "Info",
-        timeout = 5, hover_timeout = 0.5,
-        width = 400,
-    }
 end
 
 -- skip to next song
