@@ -125,6 +125,8 @@ local awesomusic = require("awesomusic")
 
 local pacman = require("pacman")
 
+local volumebar = require("volumebar")
+
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -238,6 +240,7 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             awesomusic,
             pacman,
+            volumebar,
             mytextclock,
             s.mylayoutbox,
         },

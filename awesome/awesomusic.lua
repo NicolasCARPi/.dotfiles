@@ -37,6 +37,7 @@ function awesomusic:show_song()
             out = awesomusic:split(stdout)
             if out[0]:match("^volume") then
                 -- nothing is playing
+                widget:set_text("")
                 return false
             end
             if out[2]:match("random: on") then
