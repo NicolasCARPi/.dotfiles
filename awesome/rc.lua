@@ -531,13 +531,14 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
+    -- ktr: nope
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- remove titlebar for terminal
-    { rule = { name = "urxvt" },
-        properties = { titlebars_enabled = false } },
+    --{ rule = { name = "urxvt" },
+    --    properties = { titlebars_enabled = false } },
     -- NOT WORKING FIXME
     { rule = { class = "ncmpcpp" },
         properties = { tag = "8" } },
