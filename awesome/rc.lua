@@ -242,10 +242,23 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
-            awesomusic,
-            volumebar,
-            pacman,
-            mytextclock,
+            { awesomusic,
+                left = 5,
+                right = 5,
+                layout = wibox.container.margin
+            },
+            { volumebar,
+                right = 5,
+                layout = wibox.container.margin
+            },
+            { pacman,
+                right = 5,
+                layout = wibox.container.margin
+            },
+            { mytextclock,
+                right = 3,
+                layout = wibox.container.margin
+            },
             s.mylayoutbox,
         },
     }

@@ -8,7 +8,11 @@ local wibox = require("wibox")
 local watch = require("awful.widget.watch")
 local naughty = require("naughty")
 
-local awesomusic = wibox.widget.textbox()
+local awesomusic = wibox.widget {
+    paddings = 250,
+    border_width = 5,
+    widget = wibox.widget.textbox
+}
 
 -- for some reason the | head -n 1 is not working so we need to split the stdout
 function awesomusic:split(input_str, sep)
@@ -29,7 +33,7 @@ function awesomusic:show_song()
     watch("mpc status", 2,
         function(widget, stdout, stderr, exitreason, exitcode)
             local rand_icon = ""
-            local icon = " ▶ "
+            local icon = "▶ "
             local out = awesomusic:split(stdout)
 
             if out[0]:match("^volume") then
@@ -42,7 +46,7 @@ function awesomusic:show_song()
             end
 
             if out[1]:match("paused") then
-                icon = " ⌷⌷ "
+                icon = "⌷⌷ "
             end
             -- status is first line
             local status = out[0]
