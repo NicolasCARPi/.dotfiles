@@ -9,10 +9,8 @@ local naughty = require("naughty")
 
 local awesomusic = wibox.widget.textbox()
 
-path_to_config = "/home/ktr/.config/awesome/"
-
 --rand_icon = wibox.widget.imagebox()
---rand_icon:set_image(path_to_config .. "pacman.png")
+--rand_icon:set_image(confdir .. "/lib/pacman.png")
 
 -- for some reason the | head -n 1 is not working so we need to split the stdout
 function awesomusic:split(input_str, sep)
@@ -42,8 +40,6 @@ function awesomusic:show_song()
             end
             if out[2]:match("random: on") then
                 rand_txt = " (Z)"
-
-                --rand_icon:set_image(path_to_config .. "pacman.png")
             end
             -- status is first line
             status = out[0]

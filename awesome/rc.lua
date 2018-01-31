@@ -13,8 +13,6 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
 require("awful.hotkeys_popup.keys.vim")
 
-local home_dir = "/home/ktr/"
-
 -- global var to make the focus follow the mouse
 --make_sloppy = true
 
@@ -44,8 +42,14 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- load ktr theme
-beautiful.init(home_dir .. ".config/awesome/themes/ktr/theme.lua")
+home = os.getenv("HOME")
+confdir = home .. "/.config/awesome"
+themes = confdir .. "/themes"
+active_theme = themes .. "/ktr"
+
+-- Themes define colours, icons, and wallpapers
+beautiful.init(active_theme .. "/theme.lua")
+
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -322,19 +326,20 @@ globalkeys = gears.table.join(
     -- assign print key
     awful.key({ }, "Print", function () awful.util.spawn("scrot") end,
             {description = "take screenshot", group = "utils"}),
-
     -- shift f for firefox
     awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end,
             {description = "launch firefox", group = "launcher"}),
     -- n to have filemanager
     awful.key({ modkey,           }, "n", function () awful.util.spawn("dbus-launch pcmanfm") end,
               {description = "open file browser", group = "launcher"}),
+    -- return to get terminal
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
+    -- shift r to restart awesome
     awful.key({ modkey, "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     -- awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-     --         {description = "quit awesome", group = "awesome"}),
+    --         {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
