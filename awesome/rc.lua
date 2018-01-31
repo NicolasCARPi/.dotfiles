@@ -557,6 +557,10 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
+
+    -- fiji
+    { rule = { class = "fiji-Main" },
+        properties = { screen = 1, tag = "3", switchtotag = true } },
     -- remove titlebar for terminal
     --{ rule = { name = "urxvt" },
     --    properties = { titlebars_enabled = false } },
