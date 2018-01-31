@@ -84,10 +84,14 @@ end
 -- init
 pacman:show_number()
 
-pacman:connect_signal("mouse::enter", function() pacman:show_packages() end)
+--pacman:connect_signal("mouse::enter", function() pacman:show_packages() end)
 pacman:connect_signal("button::press", function(_, _, _, button)
     -- left click
     if (button == 1) then
+        pacman:show_packages()
+    end
+    -- right click click
+    if (button == 3) then
         -- launch update command in new tmux pane
         awful.util.spawn(terminal .. " -e tmux new-window 'echo \"Launching full system update\" && sudo pacman -Syu'")
     end
