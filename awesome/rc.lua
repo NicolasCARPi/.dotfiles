@@ -121,11 +121,11 @@ awful.menu.menu_keys.close = { "Escape", "Tab" }
 --mylauncher = awful.widget.launcher({ image = "/home/ktr/.config/awesome/themes/ktr/wala.png",
 --                                     menu = mymainmenu })
 
-local awesomusic = require("awesomusic")
+local awesomusic = require("lib/awesomusic")
 
-local pacman = require("pacman")
+local pacman = require("lib/pacman")
 
-local volumebar = require("volumebar")
+local volumebar = require("lib/volumebar")
 
 
 -- Menubar configuration
@@ -239,8 +239,8 @@ awful.screen.connect_for_each_screen(function(s)
             --mykeyboardlayout,
             wibox.widget.systray(),
             awesomusic,
-            pacman,
             volumebar,
+            pacman,
             mytextclock,
             s.mylayoutbox,
         },

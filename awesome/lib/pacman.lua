@@ -24,9 +24,9 @@ end
 
 -- display current song
 function pacman:show_number()
-    watch("/home/ktr/.bin/panel_pacman.sh", 3,
+    watch("/home/ktr/.config/awesome/lib/pacman.sh", 3,
         function(widget, stdout, stderr, exitreason, exitcode)
-            widget:set_text(stdout)
+            widget:set_text(stdout .. " | ")
         end,
         pacman
     )
