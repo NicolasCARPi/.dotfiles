@@ -42,7 +42,7 @@ function awesomusic:show_song()
                 return false
             end
             if out[2]:match("random: on") then
-                rand_icon = "⚡ "
+                rand_icon = " ⚡"
             end
 
             if out[1]:match("paused") then
