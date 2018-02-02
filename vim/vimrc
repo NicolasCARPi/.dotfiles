@@ -1,8 +1,41 @@
 " vimrc
 " https://github.com/NicolasCARPi/.dotfiles
 
-" Plugins
-execute pathogen#infect()
+" Set vim behaviour, not vi.
+set nocompatible
+filetype off "required for vundle
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin("~/.vim/plugins")
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'fatih/vim-go'
+Plugin 'Valloric/YouCompleteMe'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+" YCM CONFIG
+" fix python2/3 for YCM
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
+" fix the Tab key being used
+" use C-t and C-s to go through the list
+" disable ctrl-t
+map <C-t> <Nop>
+" disable ctrl-s
+map <C-s> <Nop>
+
+let g:ycm_key_list_select_completion = ['<C-t>']
+map <C-s> <Nop>
+let g:ycm_key_list_previous_completion = ['<C-s>']
 
 syntax on " syntax highlighting
 set background=dark " dark background
@@ -21,8 +54,6 @@ set wildmenu " visual autocomplete for command menu
 set undofile
 set undodir=~/.vim/undodir
 
-" Set vim behaviour, not vi.
-set nocompatible
 set ignorecase " Case insensitive search
 set smartcase " search is case sensitive only if you put a CAPITAL
 " :tn for tabnew
@@ -93,12 +124,20 @@ au FileType crontab set nobackup nowritebackup
 
 
 " FOLDS
+set foldenable
+set foldmethod=indent
+set foldlevel=99
+
 " save/restore foldings
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 " get space to show/hide folds
 nnoremap <Space> za
+
+" show python docstring in the fold
+let g:SimpylFold_docstring_preview = 1
+" END FOLDS
 
 " gundo http://sjl.bitbucket.org/gundo.vim/
 " ,u
@@ -115,7 +154,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Ctrl-t to close HTML tags
-au FileType html,xml,xsl,php,erb source ~/.vim/bundle/closetag.vim
+"au FileType html,xml,xsl,php,erb source ~/.vim/bundle/closetag.vim
 
 " use html syntax for twig templates
 au FileType twig set syntax=html
@@ -139,6 +178,8 @@ set expandtab " tabs are spaces
 "set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 "set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
 "\ [%l/%L\ (%p%%)
+
+" PYTHON STUFF
 au FileType py set autoindent
 au FileType py set smartindent
 au FileType py set textwidth=79 " PEP-8 Friendly
@@ -231,7 +272,7 @@ map <C-S-tab> :tabprevious<CR>
 map <C-tab> :tabnext<CR>
 imap <C-S-tab> <Esc>:tabprevious<CR>i
 imap <C-tab> <Esc>:tabnext<CR>i
-nmap <C-t> :tabnew<CR>
-imap <C-t> <Esc>:tabnew<CR>
+"nmap <C-t> :tabnew<CR>
+"imap <C-t> <Esc>:tabnew<CR>
 map <S-h> gT
 map <S-l> gt
