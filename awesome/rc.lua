@@ -337,7 +337,16 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end,
             {description = "kill vlc", group = "utils"}),
     -- assign print key
-    awful.key({ }, "Print", function () awful.util.spawn("scrot") end,
+    awful.key({ }, "Print", function ()
+        awful.util.spawn("scrot")
+        naughty.notify {
+            icon = confdir .. "/lib/camera.png",
+            text = "Screenshot saved",
+            title = "Scrot",
+            timeout = 4, hover_timeout = 0.5,
+            width = 210,
+        }
+        end,
             {description = "take screenshot", group = "utils"}),
     -- shift f for firefox
     awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end,
