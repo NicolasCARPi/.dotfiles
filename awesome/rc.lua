@@ -429,8 +429,8 @@ clientkeys = gears.table.join(
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "t",      function (c) c.ontop = not c.ontop            end,
-              {description = "toggle keep on top", group = "client"}),
+    --awful.key({ modkey, "Control"   }, "t",      function (c) c.ontop = not c.ontop            end,
+     --         {description = "toggle keep on top", group = "client"}),
     -- minimize (hide)
     awful.key({ modkey,           }, "h",
         function (c)
@@ -565,6 +565,10 @@ awful.rules.rules = {
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = false }
     },
+
+    -- xvidcap should stay ontop
+    { rule = { class = "Xvidcap" },
+      properties = { ontop = true } },
 
 
     -- fiji
