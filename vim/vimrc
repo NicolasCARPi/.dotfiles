@@ -168,6 +168,7 @@ let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2', 'phpmd']
 " use html syntax for twig templates
 au FileType twig set syntax=html
 au FileType html.twig set syntax=html
+au FileType eex set syntax=html
 
 " STATUS LINE
 set laststatus=2

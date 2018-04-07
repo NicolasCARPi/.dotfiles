@@ -352,7 +352,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("firefox") end,
             {description = "launch firefox", group = "launcher"}),
     -- n to have filemanager
-    awful.key({ modkey,           }, "n", function () awful.util.spawn("dbus-launch pcmanfm " .. os.getenv("d")) end,
+--    awful.key({ modkey,           }, "n", function () awful.util.spawn("dbus-launch pcmanfm " .. os.getenv("d")) end,
+    awful.key({ modkey,           }, "n", function () awful.util.spawn("dbus-launch pcmanfm") end,
               {description = "open file browser", group = "launcher"}),
     -- return to get terminal
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
