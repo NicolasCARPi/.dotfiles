@@ -9,7 +9,7 @@ from subprocess import Popen, PIPE
 gitsym = Popen(['git', 'symbolic-ref', 'HEAD'], stdout=PIPE, stderr=PIPE)
 branch, error = gitsym.communicate()
 
-if error.find('fatal: Not a git repository') != -1:
+if error.find('fatal: not a git repository') != -1:
 	import sys
 	sys.exit(0)
 
