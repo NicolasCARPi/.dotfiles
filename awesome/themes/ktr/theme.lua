@@ -89,6 +89,7 @@ theme.taglist_squares_unsel = theme_path .. "taglist/squarez.png"
 theme.awesome_icon           = theme_path .. "awesome-icon.png"
 theme.music_icon = theme_path .. "music.png"
 theme.filezilla_icon = theme_path .. "filezilla.png"
+theme.gimp_icon = theme_path .. "gimp.png"
 theme.menu_submenu_icon      = theme_path .. "submenu.png"
 -- }}}
 

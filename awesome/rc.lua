@@ -109,8 +109,10 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end}
 }
 
+-- icons are awesome/themes/ktr/
 mymainmenu = awful.menu({ items = { { "music", terminal .. " -e ncmpcpp", beautiful.music_icon },
                                     { "filezilla", function() awful.util.spawn("filezilla") end, beautiful.filezilla_icon },
+                                    { "gimp", function() awful.util.spawn("gimp") end, beautiful.gimp_icon },
                                     { "awesome", myawesomemenu, beautiful.awesome_icon }
                                   }
                         })
