@@ -168,7 +168,7 @@ let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2', 'phpmd']
 " use html syntax for twig templates
 au FileType twig set syntax=html
 au FileType html.twig set syntax=html
-au FileType eex set syntax=html
+au FileType html.eex set syntax=html
 
 " STATUS LINE
 set laststatus=2
@@ -196,7 +196,7 @@ au FileType py set textwidth=79 " PEP-8 Friendly
 
 " BEPO
 " #####################
- 
+
 " [HJKL] -> {CTSR}
 " ————————————————
 " {cr} = « gauche / droite »
