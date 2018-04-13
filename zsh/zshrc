@@ -85,6 +85,9 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # go
 export GOPATH=/srv/http/go
 
+# python startup
+export PYTHONSTARTUP=$HOME/.pystartup
+
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions.zsh
