@@ -16,12 +16,17 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" CtrlP config
+let g:ctrlp_map = '<c-c>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " YCM CONFIG
 " fix python2/3 for YCM
