@@ -18,6 +18,7 @@ import skimage.io
 import pandas as pd
 import matplotlib.pyplot as plt
 import mahotas as mh
+import seaborn as sns
 
 historyPath = os.path.expanduser("~/.pyhistory")
 
