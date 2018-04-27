@@ -21,6 +21,7 @@ alias axiom='vncviewer 192.168.102.131'
 alias europa='vncviewer 192.168.102.134'
 alias symux='vncviewer 192.168.102.19'
 alias mvideodam='vncviewer 192.168.102.147'
+alias mvideobravo='vncviewer 192.168.102.163'
 
 # before it was d for Desktop
 if [[ $(hostname) == "kwala" ]]; then
