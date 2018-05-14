@@ -87,6 +87,7 @@ export GOPATH=/srv/http/go
 
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
+export PYTHONPATH=/srv/http/pymodules
 
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions

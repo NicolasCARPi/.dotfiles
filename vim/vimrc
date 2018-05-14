@@ -27,6 +27,11 @@ filetype plugin indent on    " required
 let g:ctrlp_map = '<c-c>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" open in a new tab
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': [],
+  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+  \ }
 
 " YCM CONFIG
 " fix python2/3 for YCM
