@@ -13,6 +13,7 @@ call vundle#begin("~/.vim/plugins")
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-syntastic/syntastic'
+"Plugin 'w0rp/ale'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
