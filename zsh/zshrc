@@ -62,6 +62,9 @@ export LS_COLORS
 # Search in history when command typing has already begun
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+# same in tmux
+bindkey '\eOA' history-beginning-search-backward
+bindkey '\eOB' history-beginning-search-forward
 
 # Fin is end of line
 bindkey '\[1~' beginning-of-line
