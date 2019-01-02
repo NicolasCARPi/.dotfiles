@@ -57,6 +57,9 @@ filetype plugin indent on " load filetype-specific indent files
 " Templates
 "au bufNewFile *.sh 0r ~/.vim/templates/bash.sh
 
+" show espaces insécables
+set listchars=nbsp:_
+set list
 
 " remove the Ex mode (also known as pain in the ass mode)
 nnoremap Q <nop>
