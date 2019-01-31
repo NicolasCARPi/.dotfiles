@@ -27,3 +27,5 @@
     summary = true
 [push]
 	default = tracking
+[core]
+	excludesfile = /home/ktr/.gitignore
