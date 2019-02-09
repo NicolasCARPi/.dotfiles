@@ -49,7 +49,7 @@ else
     export PROMPT="%{$fg[white]%}┌─[%{$fg[green]%}%n%{$fg[cyan]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}]%{$fg[yellow]%}-%{$fg[white]%}[%{$fg[cyan]%}%*%{$fg[white]%}]%{$reset_color%}%{$reset_color%}"$'\n'"%{$fg[white]%}└─>%{$reset_color%} "
 fi
 
-PATH=~/.bin:~/.opt:/srv/http/go/bin:~/.gem/ruby/2.5.0/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:~/.local/bin:$PATH
+PATH=~/.bin:~/.opt:/srv/http/go/bin:~/.gem/ruby/2.6.0/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:~/.local/bin:$PATH
 export PATH
 
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
