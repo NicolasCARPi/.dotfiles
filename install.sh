@@ -26,3 +26,4 @@ ln -s $HOME/.dotfiles/config/bspwm $HOME/.config/bspwm
 ln -s $HOME/.dotfiles/config/sxhkd $HOME/.config/sxhkd
 ln -s $HOME/.dotfiles/octaverc $HOME/.octaverc
 ln -s $HOME/.dotfiles/pystartup $HOME/.pystartup
+ln -s $HOME/.dotfiles/gemrc $HOME/.gemrc

@@ -19,7 +19,9 @@ Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'lervag/vimtex'
 
+"let g:tex_flavor = 'latex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -34,6 +36,9 @@ let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': [],
   \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
   \ }
+
+" configure better whitespace plugin to allow markdown
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help']
 
 " YCM CONFIG
 " fix python2/3 for YCM
