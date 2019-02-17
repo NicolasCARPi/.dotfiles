@@ -23,8 +23,6 @@ mkdir -p $HOME/.config
 ln -s $i $HOME/.dotfiles/awesome $HOME/.config/awesome
 ln -s $i $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
 ln -s $i $HOME/.dotfiles/config/mpd $HOME/.config/mpd
-ln -s $HOME/.dotfiles/config/bspwm $HOME/.config/bspwm
-ln -s $HOME/.dotfiles/config/sxhkd $HOME/.config/sxhkd
 ln -s $HOME/.dotfiles/octaverc $HOME/.octaverc
 ln -s $HOME/.dotfiles/pystartup $HOME/.pystartup
 ln -s $HOME/.dotfiles/gemrc $HOME/.gemrc
