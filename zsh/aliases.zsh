@@ -22,9 +22,10 @@ alias europa='vncviewer 192.168.102.134'
 alias symux='vncviewer 192.168.102.19'
 alias mvideodam='vncviewer 192.168.102.147'
 alias mvideobravo='vncviewer 192.168.102.163'
+export dev=~/.dev
 
 # before it was d for Desktop
-if [[ $(hostname) == "kwala" ]]; then
+if [[ $(hostname) == "titan" ]]; then
     export d=~
 else
     export d=~/tmp

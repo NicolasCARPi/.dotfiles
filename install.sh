@@ -20,7 +20,8 @@ ln -s $i $HOME/.dotfiles/mailcap $HOME/.mailcap
 ln -s $i $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 ln -s $HOME/.dotfiles/tmuxinator $HOME/.tmuxinator
 mkdir -p $HOME/.config
-ln -s $i $HOME/.dotfiles/config/awesome $HOME/.config/awesome
+ln -s $i $HOME/.dotfiles/awesome $HOME/.config/awesome
+ln -s $i $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
 ln -s $i $HOME/.dotfiles/config/mpd $HOME/.config/mpd
 ln -s $HOME/.dotfiles/config/bspwm $HOME/.config/bspwm
 ln -s $HOME/.dotfiles/config/sxhkd $HOME/.config/sxhkd
