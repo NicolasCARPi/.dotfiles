@@ -51,7 +51,6 @@ map <C-t> <Nop>
 map <C-s> <Nop>
 
 let g:ycm_key_list_select_completion = ['<C-t>']
-map <C-s> <Nop>
 let g:ycm_key_list_previous_completion = ['<C-s>']
 
 syntax on " syntax highlighting
@@ -131,10 +130,10 @@ set directory=~/.vim/backup
 
 " fix the backspace problem
 set backspace=indent,eol,start
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50 " keep 50 lines of command line history
+set ruler " show the cursor position all the time
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
 "set number    "enable line numbering
 "set cursorline " highlight current line
 
