@@ -30,6 +30,6 @@ if [[ $(hostname) == "titan" ]]; then
 else
     export d=~/tmp
 fi
-alias mutt='~/.bin/mount-share.sh && cd $d && mutt'
+alias mutt='~/.bin/mount-share.sh && cd $d && mutt && clear'
 alias m='mutt'
 export s=~/.share
