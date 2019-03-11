@@ -42,7 +42,7 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf',
 
 " YCM CONFIG
 " fix python2/3 for YCM
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 " fix the Tab key being used
 " use C-t and C-s to go through the list
 " disable ctrl-t
@@ -51,7 +51,6 @@ map <C-t> <Nop>
 map <C-s> <Nop>
 
 let g:ycm_key_list_select_completion = ['<C-t>']
-map <C-s> <Nop>
 let g:ycm_key_list_previous_completion = ['<C-s>']
 
 syntax on " syntax highlighting
@@ -131,10 +130,10 @@ set directory=~/.vim/backup
 
 " fix the backspace problem
 set backspace=indent,eol,start
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50 " keep 50 lines of command line history
+set ruler " show the cursor position all the time
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
 "set number    "enable line numbering
 "set cursorline " highlight current line
 
@@ -170,10 +169,11 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2', 'phpmd']
-let g:syntastic_python_checkers = []
+" disable for python
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "function! FindConfig(prefix, what, where)
 "    let cfg = findfile(a:what, escape(a:where, ' ') . ';')
 "    return cfg !=# '' ? ' ' . a:prefix . ' ' . shellescape(cfg) : ''

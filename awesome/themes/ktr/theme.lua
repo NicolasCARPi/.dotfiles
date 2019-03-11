@@ -9,7 +9,7 @@ local theme_path = home_dir .. ".config/awesome/themes/ktr/"
 -- {{{ Main
 local theme = {}
 -- curent.jpg is a symlink to real wallpaper
-theme.wallpaper = home_dir .. ".wallpapers/current.jpg"
+theme.wallpaper = theme_path .. "wallpaper.jpg"
 -- }}}
 
 -- {{{ Styles
