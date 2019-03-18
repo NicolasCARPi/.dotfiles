@@ -98,13 +98,23 @@ export GOPATH=~/.go
 
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
-export PYTHONPATH=/srv/http/pymodules
+
+# R
+export R_LIBS=~/.R/libs
 
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions
 source ~/.zsh/zsh-autosuggestions.zsh
 # change color of autocomplete
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
+
+# ssh agent
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval $(<~/.ssh-agent-thing) > /dev/null
+fi
 
 ## ls after cd
 function chpwd() {
@@ -137,6 +147,11 @@ function e () {
     fi
 }
 
+# print document
+function p() {
+    lp -o fit-to-page -o media=A4 -o sides=two-sided-long-edge -d PielPrinter "$1"
+}
+
 # other conf files
 # if file is here and is readable, load it
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
@@ -144,6 +159,7 @@ function e () {
 
 if [ "$TERM" != "linux" ] ; then
     if ! tmux list-sessions > /dev/null 2>&1; then
+        ssh-add ~/.ssh/id_ed25519
         tmuxinator ktr
     fi
 fi
