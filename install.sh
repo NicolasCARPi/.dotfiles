@@ -10,6 +10,7 @@ fi
 
 # create dirs
 mkdir -p $HOME/.vim/backup
+mkdir -p $HOME/.vim/undodir
 mkdir -p $HOME/.config
 
 # make the links
