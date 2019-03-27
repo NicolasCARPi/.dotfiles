@@ -51,7 +51,7 @@ fi
 
 # PATH
 PATH=~/.bin:~/.opt:~/.go/bin:~/.gem/ruby/2.6.0/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
-PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.1.0.1141-linux/bin
+PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin
 export PATH
 
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
