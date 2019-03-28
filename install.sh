@@ -8,9 +8,6 @@ if [ "$(uname)" != "OpenBSD" ]; then
     i=" -i"
 fi
 
-# create dirs
-mkdir -p $HOME/.vim/backup
-mkdir -p $HOME/.config
 
 # make the links
 ln -s $i $HOME/.dotfiles/vim $HOME/.vim
@@ -29,3 +26,7 @@ ln -s $i $HOME/.dotfiles/user-dirs.dir $HOME/.config/user-dirs.dir
 ln -s $i $HOME/.dotfiles/octaverc $HOME/.octaverc
 ln -s $i $HOME/.dotfiles/pystartup $HOME/.pystartup
 ln -s $i $HOME/.dotfiles/gemrc $HOME/.gemrc
+
+# create dirs
+mkdir -p $HOME/.vim/backup
+mkdir -p $HOME/.config
