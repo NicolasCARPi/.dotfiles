@@ -8,7 +8,6 @@ if [ "$(uname)" != "OpenBSD" ]; then
     i=" -i"
 fi
 
-
 # make the links
 ln -s $i $HOME/.dotfiles/vim $HOME/.vim
 ln -s $i .dotfiles/zsh $HOME/.zsh
@@ -19,14 +18,17 @@ ln -s $i $HOME/.dotfiles/Xdefaults $HOME/.Xdefaults
 ln -s $i $HOME/.dotfiles/mailcap $HOME/.mailcap
 ln -s $i $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 ln -s $i $HOME/.dotfiles/tmuxinator $HOME/.tmuxinator
-ln -s $i $HOME/.dotfiles/awesome $HOME/.config/awesome
-ln -s $i $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
-ln -s $i $HOME/.dotfiles/config/mpd $HOME/.config/mpd
-ln -s $i $HOME/.dotfiles/user-dirs.dir $HOME/.config/user-dirs.dir
 ln -s $i $HOME/.dotfiles/octaverc $HOME/.octaverc
 ln -s $i $HOME/.dotfiles/pystartup $HOME/.pystartup
 ln -s $i $HOME/.dotfiles/gemrc $HOME/.gemrc
 
-# create dirs
-mkdir -p $HOME/.vim/backup
+# config dir
 mkdir -p $HOME/.config
+ln -s $i $HOME/.dotfiles/awesome $HOME/.config/awesome
+ln -s $i $HOME/.dotfiles/ncmpcpp $HOME/.config/ncmpcpp
+ln -s $i $HOME/.dotfiles/config/mpd $HOME/.config/mpd
+ln -s $i $HOME/.dotfiles/user-dirs.dir $HOME/.config/user-dirs.dir
+
+# create dirs for vim
+mkdir -p $HOME/.vim/backup
+mkdir -p $HOME/.vim/undodir

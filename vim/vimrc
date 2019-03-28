@@ -71,6 +71,7 @@ nnoremap Q <nop>
 
 set wildmenu " visual autocomplete for command menu
 
+" peristant undo buffer
 set undofile
 set undodir=~/.vim/undodir
 
