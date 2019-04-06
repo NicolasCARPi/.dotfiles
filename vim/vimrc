@@ -21,6 +21,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'lervag/vimtex'
+Plugin 'cespare/vim-toml'
 
 "let g:tex_flavor = 'latex'
 
