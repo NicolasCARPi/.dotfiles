@@ -32,3 +32,5 @@ ln -s $i $HOME/.dotfiles/user-dirs.dir $HOME/.config/user-dirs.dir
 # create dirs for vim
 mkdir -p $HOME/.vim/backup
 mkdir -p $HOME/.vim/undodir
+
+echo "All symlinks created. Now run :PluginInstall in vim"
