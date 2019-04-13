@@ -42,3 +42,5 @@ mkdir -p "$HOME/.vim/undodir"
 
 echo "Installing vim plugins"
 vim +PluginInstall +qall
+echo "Compiling YCM"
+python3 "$HOME/.vim/plugins/YouCompleteMe/install.py"
