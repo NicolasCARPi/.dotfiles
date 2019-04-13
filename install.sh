@@ -40,4 +40,5 @@ fi
 mkdir -p "$HOME/.vim/backup"
 mkdir -p "$HOME/.vim/undodir"
 
-echo "All symlinks created. Now run :PluginInstall in vim"
+echo "Installing vim plugins"
+vim +PluginInstall +qall
