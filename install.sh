@@ -6,6 +6,10 @@ headless=0
 if [ "$1" = '--headless' ]; then
     headless=1
 fi
+ycm=1
+if [ "$2" = '--no-ycm' ]; then
+    ycm=0
+fi
 
 cd "$HOME"
 
@@ -40,7 +44,9 @@ fi
 mkdir -p "$HOME/.vim/backup"
 mkdir -p "$HOME/.vim/undodir"
 
-echo "Installing vim plugins"
-vim +PluginInstall +qall
-echo "Compiling YCM"
-python3 "$HOME/.vim/plugins/YouCompleteMe/install.py"
+if [ $ycm -eq 1 ]; then
+    echo "Installing vim plugins"
+    vim +PluginInstall +qall
+    echo "Compiling YCM"
+    python3 "$HOME/.vim/plugins/YouCompleteMe/install.py"
+fi
