@@ -161,7 +161,10 @@ function p() {
 
 if [ "$TERM" != "linux" ] ; then
     if ! tmux list-sessions > /dev/null 2>&1; then
-        ssh-add ~/.ssh/id_ed25519
+        # don't ask again if the key is already loaded
+        if ! ssh-add -l > /dev/null; then
+            ssh-add ~/.ssh/id_ed25519
+        fi
         tmuxinator ktr
     fi
 fi
