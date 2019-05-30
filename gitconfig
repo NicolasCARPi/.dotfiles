@@ -29,3 +29,5 @@
 	default = tracking
 [core]
 	excludesfile = /home/ktr/.gitignore
+[color "diff"]
+	new = white black bold
