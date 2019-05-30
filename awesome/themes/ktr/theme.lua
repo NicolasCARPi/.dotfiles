@@ -2,14 +2,25 @@
 --  "ktr" awesome theme  --
 -------------------------------
 
+function getHostname()
+    local f = io.popen ("/usr/bin/hostname")
+    local hostname = f:read("*a") or ""
+    f:close()
+    hostname =string.gsub(hostname, "\n$", "")
+    return hostname
+end
+
 --local themes_path = require("gears.filesystem").get_themes_dir()
 local home_dir = "/home/ktr/"
 local theme_path = home_dir .. ".config/awesome/themes/ktr/"
 
 -- {{{ Main
 local theme = {}
--- curent.jpg is a symlink to real wallpaper
-theme.wallpaper = theme_path .. "wallpaper.jpg"
+local wallpaper = "wallpaper.jpg"
+if getHostname() == "neon" then
+    wallpaper = "cthulhu.jpg"
+end
+theme.wallpaper = theme_path .. wallpaper
 -- }}}
 
 -- {{{ Styles
