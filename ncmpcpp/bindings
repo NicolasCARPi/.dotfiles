@@ -327,8 +327,8 @@ def_key "backspace"
 #def_key "b"
 #  seek_backward
 #
-#def_key "r"
-#  toggle_repeat
+def_key "R"
+  toggle_repeat
 #
 #def_key "z"
 #  toggle_random
