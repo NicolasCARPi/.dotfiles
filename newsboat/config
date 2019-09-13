@@ -1,0 +1,6 @@
+unbind-key       j
+bind-key         t    down
+unbind-key       k
+bind-key         s    up
+unbind-key       ENTER
+bind-key         SPACE open
