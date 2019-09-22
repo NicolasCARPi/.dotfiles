@@ -29,7 +29,7 @@ alias utf8chk='find . -type f -exec file -bi {} \; -print|less'
 # apps
 alias mutt='~/.bin/mount-share.sh && cd $d && mutt && clear'
 alias fiji='~/.opt/Fiji.app/ImageJ-linux64'
-alias minecraft='java -Xmx3G -Xms3G -jar ~/.opt/Minecraft.jar'
+alias minecraft='~/.opt/minecraft-launcher/minecraft-launcher'
 
 # exported variables
 export dev=~/.dev

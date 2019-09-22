@@ -165,7 +165,11 @@ if [ "$TERM" != "linux" ] ; then
         if ! ssh-add -l > /dev/null; then
             ssh-add ~/.ssh/id_ed25519
         fi
-        tmuxinator ktr
+        if [ -r ${HOME}/.zsh/tmuxinator.zsh ]; then
+            tmuxinator ktr
+        else
+            tmux
+        fi
     fi
 fi
 # /K\
