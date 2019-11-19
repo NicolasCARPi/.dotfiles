@@ -39,6 +39,8 @@ stty -ixon
 
 # vim <3
 export EDITOR="vim"
+# firefox <3
+export BROWSER="firefox"
 
 ## PROMPT appearance
 #┌─[user@machine:~]-[16:26:07]
