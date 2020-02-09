@@ -15,13 +15,14 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-syntastic/syntastic'
 "Plugin 'w0rp/ale'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'lervag/vimtex'
 Plugin 'cespare/vim-toml'
+Plugin 'shawncplus/phpcomplete.vim'
 
 "let g:tex_flavor = 'latex'
 
@@ -44,7 +45,8 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf',
 
 " YCM CONFIG
 " fix python2/3 for YCM
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+" let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/home/ktr/.pyenv/versions/3.7.5/bin/python'
 " fix the Tab key being used
 " use C-t and C-s to go through the list
 " disable ctrl-t
@@ -210,6 +212,7 @@ set softtabstop=4 " number of spaces in tab when editing
 set shiftwidth=4
 set expandtab " tabs are spaces
 "set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+set listchars=tab:▷⋅
 "set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
 "\ [%l/%L\ (%p%%)
 
