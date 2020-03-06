@@ -1,6 +1,6 @@
 [user]
-	name = Nicolas CARPi
-	email = nicolas.carpi@curie.fr
+    name = Nicolas CARPi
+    email = noreply@deltablot.email
 
 [alias]
     st = status -sb
