@@ -1,7 +1,7 @@
 [user]
-	name = Nicolas CARPi
-	email = nico-git@deltablot.email
-	signingkey = 15256C7E
+    name = Nicolas CARPi
+    email = nico-git@deltablot.email
+    signingkey = 15256C7E
 
 [alias]
     st = status -sb
@@ -27,10 +27,8 @@
     # better merge message
     summary = true
 [push]
-	default = tracking
+    default = tracking
 [core]
-	excludesfile = /home/ktr/.gitignore
+    excludesfile = /home/ktr/.gitignore
 [color "diff"]
-	new = white black bold
-[gpg]
-	program = gpg2
+    new = white black bold
