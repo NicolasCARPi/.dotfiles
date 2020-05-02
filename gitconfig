@@ -1,7 +1,6 @@
 [user]
     name = Nicolas CARPi
-    email = nico-git@deltablot.email
-    signingkey = 15256C7E
+    email = noreply@deltablot.email
 
 [alias]
     st = status -sb
