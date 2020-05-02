@@ -1,6 +1,7 @@
 [user]
 	name = Nicolas CARPi
-	email = nicolas.carpi@curie.fr
+	email = nico-git@deltablot.email
+	signingkey = 15256C7E
 
 [alias]
     st = status -sb
@@ -31,3 +32,5 @@
 	excludesfile = /home/ktr/.gitignore
 [color "diff"]
 	new = white black bold
+[gpg]
+	program = gpg2

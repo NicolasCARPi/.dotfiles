@@ -26,6 +26,8 @@ alias nes='fceux'
 alias tv='vim /mnt/data/var/docs/tv.txt'
 alias utf8chk='find . -type f -exec file -bi {} \; -print|less'
 alias rss='newsboat'
+alias irc='weechat'
+alias dc='docker-compose'
 
 # apps
 alias mutt='~/.bin/mount-share.sh && cd $d && mutt && clear'

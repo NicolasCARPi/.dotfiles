@@ -16,7 +16,7 @@ local watch = require("awful.widget.watch")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
-local request_command = "amixer get PCM"
+local request_command = "amixer get Master"
 
 local bar_color = beautiful.fg_normal
 local mute_color = "#ff0000"
@@ -55,9 +55,9 @@ end
 
 volumebar:connect_signal("button::press", function(_,_,_,button)
     -- scroll up
-    if (button == 4)     then awful.spawn("amixer set PCM 2dB+", false)
+    if (button == 4)     then awful.spawn("amixer set Master 2dB+", false)
     -- scroll down
-    elseif (button == 5) then awful.spawn("amixer set PCM 2dB-", false)
+    elseif (button == 5) then awful.spawn("amixer set Master 2dB-", false)
     -- left click
     elseif (button == 1) then awful.spawn("mpc toggle", false)
     -- right click

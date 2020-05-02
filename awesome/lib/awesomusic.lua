@@ -81,7 +81,7 @@ end
 
 -- set volume (sign should be + or -)
 function awesomusic:vol(sign)
-    os.execute("amixer -q set 'PCM' 2dB" .. sign)
+    os.execute("amixer -q set 'Master' 2dB" .. sign)
 end
 
 -- init

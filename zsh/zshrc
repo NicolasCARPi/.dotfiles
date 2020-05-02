@@ -7,6 +7,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # autocompletion
+export fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
 # load colors
 [[ -r ${HOME}/.zsh/colors.zsh ]] && source ${HOME}/.zsh/colors.zsh
@@ -41,6 +42,8 @@ stty -ixon
 export EDITOR="vim"
 # firefox <3
 export BROWSER="firefox"
+# GPG (for signing git tags)
+export GPG_TTY=$(tty)
 
 ## PROMPT appearance
 #┌─[user@machine:~]-[16:26:07]
@@ -141,7 +144,7 @@ function e () {
         *.tar) tar xvf $1 ;;
         *.tbz2) tar xvjf $1 ;;
         *.tgz) tar xvzf $1 ;;
-        *.zip) unzip $1 ;;
+        *.zip) 7z x $1 ;;
         *.Z) uncompress $1 ;;
         *.7z) 7z x $1 ;;
         *.tar.xz) tar xvJf $1 ;;
