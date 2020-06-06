@@ -118,6 +118,9 @@ source ~/.zsh/zsh-autosuggestions.zsh
 # change color of autocomplete
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 
+# use correct clipboard for password-store (default is clipboard and it doesn't work in term)
+export PASSWORD_STORE_X_SELECTION='primary'
+
 # ssh agent
 if ! pgrep -u $USER ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
