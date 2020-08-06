@@ -12,6 +12,7 @@ alias df='df -h'
 alias free='free -h'
 alias g='git'
 alias m='mutt'
+alias steam='flatpak run com.valvesoftware.Steam'
 
 # custom aliases
 alias serve='python2 -m SimpleHTTPServer 8888'

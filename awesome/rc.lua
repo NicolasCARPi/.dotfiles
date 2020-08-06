@@ -572,6 +572,9 @@ awful.rules.rules = {
     -- xvidcap should stay ontop
     { rule = { class = "Xvidcap" },
       properties = { ontop = true } },
+    -- when in TV mode use this
+    -- { rule = { class = "MPlayer" },
+      -- properties = { ontop = true } },
 
 
     -- fiji
