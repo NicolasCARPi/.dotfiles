@@ -32,3 +32,5 @@
     excludesfile = /home/ktr/.gitignore
 [color "diff"]
     new = white black bold
+[pull]
+    rebase = false
