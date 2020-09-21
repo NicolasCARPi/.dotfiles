@@ -33,4 +33,4 @@
 [color "diff"]
     new = white black bold
 [pull]
-	rebase = false
+    rebase = false
