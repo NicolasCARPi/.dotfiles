@@ -56,10 +56,10 @@ end
 volumebar:connect_signal("button::press", function(_,_,_,button)
     -- scroll up
     -- if (button == 4)     then awful.spawn("amixer set Master 2dB+", false)
-    if (button == 4)     then awful.spawn("pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5%", false)
+    if (button == 4)     then awful.spawn("pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +3%", false)
     -- scroll down
     -- elseif (button == 5) then awful.spawn("amixer set Master 2dB-", false)
-    elseif (button == 5) then awful.spawn("pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5%", false)
+    elseif (button == 5) then awful.spawn("pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -3%", false)
     -- left click
     elseif (button == 1) then awful.spawn("mpc toggle", false)
     -- right click
