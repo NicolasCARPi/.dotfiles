@@ -582,6 +582,9 @@ awful.rules.rules = {
         properties = { screen = 1, tag = "3", switchtotag = true } },
     { rule = { class = "conky" },
         properties = { border_width = 0, sticky = true, focusable = false } },
+    -- sticky mplayer for camera
+    { rule = { class = "MPlayer" },
+        properties = { border_width = 0, sticky = true, focusable = false, ontop= true } },
     -- remove titlebar for terminal
     --{ rule = { name = "urxvt" },
     --    properties = { titlebars_enabled = false } },

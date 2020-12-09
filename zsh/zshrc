@@ -44,6 +44,8 @@ export EDITOR="vim"
 export BROWSER="firefox"
 # GPG (for signing git tags)
 export GPG_TTY=$(tty)
+# owncloud
+export OWNCLOUD_UPLOAD_CONFLICT_FILES=1
 
 ## PROMPT appearance
 #┌─[user@machine:~]-[16:26:07]

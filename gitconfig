@@ -1,3 +1,5 @@
+[init]
+    defaultBranch = master
 [user]
     name = Nicolas CARPi
     email = nico-git@deltablot.email
