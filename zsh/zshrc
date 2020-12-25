@@ -40,12 +40,6 @@ stty -ixon
 
 # vim <3
 export EDITOR="vim"
-# firefox <3
-export BROWSER="firefox"
-# GPG (for signing git tags)
-export GPG_TTY=$(tty)
-# owncloud
-export OWNCLOUD_UPLOAD_CONFLICT_FILES=1
 
 ## PROMPT appearance
 #┌─[user@machine:~]-[16:26:07]
@@ -60,16 +54,6 @@ fi
 PATH=~/.bin:~/.opt:~/.go/bin:~/.gem/ruby/2.7.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
 PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin
 export PATH
-
-export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
-
-# bundle as user
-export BUNDLE_PATH=~/.bundle
-# GIT PROMPT
-#setopt prompt_subst
-#source ~/.zsh/git-prompt/gitzsh
-#RPROMPT='$(git_super_status)'
-# END GIT PROMPT
 
 # to have nice colors in ls
 LS_COLORS='rs=00:fi=00;32:di=02;36:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=00;35:*.tar=00;31:*.tgz=01;33:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=00;32:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:'
@@ -120,17 +104,6 @@ source ~/.zsh/zsh-autosuggestions.zsh
 # change color of autocomplete
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 
-# use correct clipboard for password-store (default is clipboard and it doesn't work in term)
-export PASSWORD_STORE_X_SELECTION='primary'
-
-# ssh agent
-if ! pgrep -u $USER ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval $(<~/.ssh-agent-thing) > /dev/null
-fi
-
 ## ls after cd
 function chpwd() {
     emulate -LR zsh
@@ -162,20 +135,9 @@ function e () {
     fi
 }
 
-# print document
-function p() {
-    lp -o fit-to-page -o media=A4 -o sides=two-sided-long-edge -d PielPrinter "$1"
-}
-
 # other conf files
 # if file is here and is readable, load it
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
-[[ -r ${HOME}/.zsh/tmuxinator.zsh ]] && source ${HOME}/.zsh/tmuxinator.zsh
-
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
 
 if [ "$TERM" != "linux" ] ; then
     if ! tmux list-sessions > /dev/null 2>&1; then
