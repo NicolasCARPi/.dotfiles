@@ -68,6 +68,9 @@ filetype plugin indent on " load filetype-specific indent files
 " Templates
 "au bufNewFile *.sh 0r ~/.vim/templates/bash.sh
 
+" don't keep traces for ansible-vault stuff
+autocmd BufRead,BufNewFile ~/.ansible/tmp/* set noswapfile nobackup nowritebackup
+
 " show espaces insécables
 set listchars=nbsp:_
 set list
