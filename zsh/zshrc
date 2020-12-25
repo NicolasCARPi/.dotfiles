@@ -7,7 +7,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # autocompletion
-export fpath=(~/.zsh/functions $fpath)
+#export fpath=(~/.zsh/functions $fpath)
 autoload -Uz compinit && compinit
 # load colors
 [[ -r ${HOME}/.zsh/colors.zsh ]] && source ${HOME}/.zsh/colors.zsh
