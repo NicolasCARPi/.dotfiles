@@ -43,5 +43,5 @@ export t=/mnt/data/
 if [[ $(hostname) == "titan" ]]; then
     export d=~
 else
-    export d=~/tmp
+    export d=~/cloud/tmp
 fi
