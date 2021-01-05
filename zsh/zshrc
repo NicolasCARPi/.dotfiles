@@ -44,6 +44,8 @@ export EDITOR="vim"
 export BROWSER="firefox"
 # GPG (for signing git tags)
 export GPG_TTY=$(tty)
+# owncloud
+export OWNCLOUD_UPLOAD_CONFLICT_FILES=1
 
 ## PROMPT appearance
 #┌─[user@machine:~]-[16:26:07]
@@ -55,7 +57,7 @@ else
 fi
 
 # PATH
-PATH=~/.bin:~/.opt:~/.go/bin:~/.gem/ruby/2.7.0/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
+PATH=~/.bin:~/.opt:~/.go/bin:~/.gem/ruby/2.7.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
 PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin
 export PATH
 

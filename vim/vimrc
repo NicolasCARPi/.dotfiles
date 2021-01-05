@@ -46,8 +46,10 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf',
 
 " YCM CONFIG
 " fix python2/3 for YCM
-" let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_server_python_interpreter = '/home/ktr/.pyenv/versions/3.7.5/bin/python'
+ let g:ycm_server_python_interpreter = '/usr/bin/python'
+" disable the doc on hover
+let g:ycm_auto_hover = ''
+"let g:ycm_server_python_interpreter = '/home/ktr/.pyenv/versions/3.7.5/bin/python'
 " fix the Tab key being used
 " use C-t and C-s to go through the list
 " disable ctrl-t
@@ -65,6 +67,9 @@ colorscheme ktr " colorscheme
 filetype plugin indent on " load filetype-specific indent files
 " Templates
 "au bufNewFile *.sh 0r ~/.vim/templates/bash.sh
+
+" don't keep traces for ansible-vault stuff
+autocmd BufRead,BufNewFile ~/.ansible/tmp/* set noswapfile nobackup nowritebackup
 
 " show espaces insécables
 set listchars=nbsp:_

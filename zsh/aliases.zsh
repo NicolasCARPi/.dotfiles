@@ -15,7 +15,7 @@ alias m='mutt'
 alias steam='flatpak run com.valvesoftware.Steam'
 
 # custom aliases
-alias serve='python2 -m SimpleHTTPServer 8888'
+alias serve='python -m http.server 8888'
 alias dmesg='dmesg -H'
 alias mutt='~/.bin/mount-share.sh && cd $d && mutt && clear'
 alias eject="eject /dev/sr0"
@@ -40,8 +40,9 @@ export dev=~/.dev
 export t=/mnt/data/
 
 # before it was d for Desktop
-if [[ $(hostname) == "titan" ]]; then
+if [[ $(hostname) == "ryzen" ]]; then
     export d=~
 else
     export d=~/cloud/tmp
 fi
+alias y='docker exec -it dev_web_1 yarn'

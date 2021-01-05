@@ -81,7 +81,7 @@ end
 
 -- set volume (sign should be + or -)
 function awesomusic:vol(sign)
-    os.execute("pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo " .. sign .. "5%")
+    os.execute("pactl set-sink-volume alsa_output.pci-0000_2f__00.4.analog-stereo " .. sign .. "3%")
 end
 
 -- init

@@ -1,4 +1,4 @@
-# use elinks to view html emails in mutt
+# use w3m to view html emails in mutt
 text/html; w3m -v -F -o display_link_number=1 -I %{charset} -T text/html; copiousoutput;
 application/pdf; evince '%s'
 image/pdf; evince '%s'
