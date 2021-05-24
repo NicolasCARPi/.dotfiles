@@ -31,12 +31,13 @@ alias irc='weechat'
 alias dc='docker-compose'
 
 # apps
-alias mutt='~/.bin/mount-share.sh && cd $d && mutt && clear'
+alias mutt='~/.bin/mount-share.sh 2>/dev/null && cd $d && mutt && clear'
 alias fiji='~/.opt/Fiji.app/ImageJ-linux64'
 alias minecraft='~/.opt/minecraft-launcher/minecraft-launcher'
 
 # exported variables
 export dev=~/.dev
+export r=~/.research
 export t=/mnt/data/
 
 # before it was d for Desktop
@@ -46,3 +47,4 @@ else
     export d=~/tmp
 fi
 alias y='docker exec -it dev_web_1 yarn'
+alias cmp='docker exec -it dev_web_1 composer'

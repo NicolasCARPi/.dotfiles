@@ -57,7 +57,7 @@ else
 fi
 
 # PATH
-PATH=~/.bin:~/.opt:~/.go/bin:~/.gem/ruby/2.7.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
+PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.gem/ruby/3.0.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
 PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin
 export PATH
 
@@ -113,6 +113,9 @@ export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 # R
 export R_LIBS=~/.R/libs
+
+# cypress
+export CYPRESS_CRASH_REPORTS=0
 
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions
