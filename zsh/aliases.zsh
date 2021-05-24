@@ -44,7 +44,7 @@ export t=/mnt/data/
 if [[ $(hostname) == "ryzen" ]]; then
     export d=~
 else
-    export d=~/tmp
+    export d=~/cloud/tmp
 fi
 alias y='docker exec -it dev_web_1 yarn'
 alias cmp='docker exec -it dev_web_1 composer'
