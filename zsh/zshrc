@@ -156,7 +156,7 @@ function e () {
         *.Z) uncompress $1 ;;
         *.7z) 7z x $1 ;;
         *.tar.xz) tar xvJf $1 ;;
-        *.xz) unlzma $1 ;;
+        *.xz) unxz $1 ;;
         *) echo "wtf is that shit ?? '$1'...";;
 
         esac
