@@ -108,7 +108,8 @@ export GOPATH=~/.go
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
 # pyenv stuff
-export PYENV_ROOT=$HOME/.pyenv
+eval "$(pyenv init -)"
+
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 # R
