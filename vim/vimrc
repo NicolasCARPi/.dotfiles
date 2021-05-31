@@ -57,6 +57,8 @@ map <C-t> <Nop>
 " disable ctrl-s
 map <C-s> <Nop>
 
+:autocmd FileType php noremap <C-L> :!php -l %<CR>
+
 let g:ycm_key_list_select_completion = ['<C-t>']
 let g:ycm_key_list_previous_completion = ['<C-s>']
 

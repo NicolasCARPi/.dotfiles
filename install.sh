@@ -30,6 +30,7 @@ ln -sf "$HOME/.dotfiles/tmuxinator" "$HOME/.tmuxinator"
 ln -sf "$HOME/.dotfiles/octaverc" "$HOME/.octaverc"
 ln -sf "$HOME/.dotfiles/pystartup" "$HOME/.pystartup"
 ln -sf "$HOME/.dotfiles/gemrc" "$HOME/.gemrc"
+ln -sf "$HOME/.dotfiles/zprofile" "$HOME/.zprofile"
 
 # config dir
 mkdir -p "$HOME/.config"

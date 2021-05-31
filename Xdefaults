@@ -25,16 +25,14 @@ URxvt*secondaryScroll:  true
 !url clickable
 !-------------
 URxvt*scrollBar: false
-URxvt.perl-ext: default,matcher,selection-to-clipboard
-URxvt.perl-ext-common: default,tabbed
+URxvt.perl-ext-common: default,tabbed,matcher
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+# launch in firefox
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.underline: true
 # allow click on match to activate
 URxvt.matcher.button: 1
-# launch in firefox
-URxvt.url-launcher: /usr/bin/firefox
-# select to go over the matched links
-URxvt*keysym.M-u: matcher:select
-# last to activate the last match
-URxvt*keysym.M-a: matcher:last
 
 !-----------
 !tabs colors

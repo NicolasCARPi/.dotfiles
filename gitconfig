@@ -13,7 +13,7 @@
     ch = checkout
     br = branch -v
     d = diff
-    dd = diff --stat
+    dd = diff --stat HEAD
     g = grep -I
 [color]
     # colors ftw

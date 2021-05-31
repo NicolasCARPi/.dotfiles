@@ -57,8 +57,8 @@ else
 fi
 
 # PATH
-PATH=~/.bin:~/.opt:~/.go/bin:~/.gem/ruby/2.7.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
-PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin:~/.pyenv/versions/3.8.0/bin
+PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.gem/ruby/3.0.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
+PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin
 export PATH
 
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
@@ -108,11 +108,15 @@ export GOPATH=~/.go
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
 # pyenv stuff
-export PYENV_ROOT=$HOME/.pyenv
+eval "$(pyenv init -)"
+
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 # R
 export R_LIBS=~/.R/libs
+
+# cypress
+export CYPRESS_CRASH_REPORTS=0
 
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions
@@ -153,7 +157,7 @@ function e () {
         *.Z) uncompress $1 ;;
         *.7z) 7z x $1 ;;
         *.tar.xz) tar xvJf $1 ;;
-        *.xz) unlzma $1 ;;
+        *.xz) unxz $1 ;;
         *) echo "wtf is that shit ?? '$1'...";;
 
         esac
