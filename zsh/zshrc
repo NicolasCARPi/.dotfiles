@@ -176,11 +176,6 @@ function p() {
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
 [[ -r ${HOME}/.zsh/tmuxinator.zsh ]] && source ${HOME}/.zsh/tmuxinator.zsh
 
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
-
 if [ "$TERM" != "linux" ] ; then
     if ! tmux list-sessions > /dev/null 2>&1; then
         # don't ask again if the key is already loaded
