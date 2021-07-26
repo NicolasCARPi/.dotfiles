@@ -25,7 +25,7 @@ URxvt*secondaryScroll:  true
 !url clickable
 !-------------
 URxvt*scrollBar: false
-URxvt.perl-ext-common: default,tabbed,matcher
+URxvt.perl-ext-common: default,tabbed,matcher,resize-font
 URxvt.perl-ext: default,url-select
 URxvt.keysym.M-u: perl:url-select:select_next
 # launch in firefox
