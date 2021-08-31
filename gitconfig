@@ -12,7 +12,7 @@
     c = commit -a
     ch = checkout
     br = branch -v
-    d = diff
+    d = diff HEAD
     dd = diff --stat HEAD
     g = grep -I
 [color]

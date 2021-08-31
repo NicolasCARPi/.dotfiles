@@ -49,6 +49,8 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf',
  let g:ycm_server_python_interpreter = '/usr/bin/python'
 " disable the doc on hover
 let g:ycm_auto_hover = ''
+" close split window after insertion
+let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_server_python_interpreter = '/home/ktr/.pyenv/versions/3.7.5/bin/python'
 " fix the Tab key being used
 " use C-t and C-s to go through the list
