@@ -107,8 +107,6 @@ export GOPATH=~/.go
 
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
-# pyenv stuff
-eval "$(pyenv init -)"
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
