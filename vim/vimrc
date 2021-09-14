@@ -42,7 +42,7 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " configure better whitespace plugin to allow markdown
-let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help']
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help', 'mail']
 
 " YCM CONFIG
 " fix python2/3 for YCM
@@ -58,6 +58,9 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 map <C-t> <Nop>
 " disable ctrl-s
 map <C-s> <Nop>
+
+" map W to w
+:command W w
 
 :autocmd FileType php noremap <C-L> :!php -l %<CR>
 
