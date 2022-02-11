@@ -7,3 +7,5 @@ image/jpeg; gpicview '%s'
 application/msword; libreoffice '%s'
 application/vnd.openxm; libreoffice '%s'
 application/vnd.ms-exec; libreoffice '%s'
+text/calendar; ~/.mutt/vcalendar-filter %s; copiousoutput
+application/ics; ~/.mutt/vcalendar-filter %s; copiousoutput

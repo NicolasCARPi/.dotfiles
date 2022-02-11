@@ -46,5 +46,5 @@ if [[ $(hostname) == "ryzen" ]]; then
 else
     export d=~/cloud/tmp
 fi
-alias y='docker exec -it dev_web_1 yarn'
-alias cmp='docker exec -it dev_web_1 composer'
+alias y='docker exec -it dev-web-1 yarn'
+alias cmp='docker exec -it dev-web-1 composer'
