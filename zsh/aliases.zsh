@@ -29,6 +29,7 @@ alias utf8chk='find . -type f -exec file -bi {} \; -print|less'
 alias rss='newsboat'
 alias irc='weechat'
 alias dc='docker-compose'
+alias tf='terraform'
 
 # apps
 alias mutt='~/.bin/mount-share.sh 2>/dev/null && cd $d && mutt && clear'

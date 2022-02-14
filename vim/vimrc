@@ -208,6 +208,8 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 au FileType twig set syntax=html
 au FileType html.twig set syntax=html
 au FileType html.eex set syntax=html
+autocmd BufNewFile,BufRead *.hcl setfiletype hcl
+au FileType hcl set syntax=conf
 
 " STATUS LINE
 set laststatus=2

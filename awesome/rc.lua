@@ -52,7 +52,7 @@ beautiful.init(active_theme .. "/theme.lua")
 
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = "urxvt -b 0"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -586,8 +586,8 @@ awful.rules.rules = {
     { rule = { class = "MPlayer" },
         properties = { border_width = 0, sticky = true, focusable = false, ontop= true } },
     -- remove titlebar for terminal
-    --{ rule = { name = "urxvt" },
-    --    properties = { titlebars_enabled = false } },
+    { rule = { name = "urxvt" },
+        properties = { size_hints_honor=false } },
     -- NOT WORKING FIXME
     { rule = { class = "ncmpcpp" },
         properties = { tag = "8" } },
@@ -673,7 +673,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- fix memory leak
 -- TODO: Remove this once I have a version of awesome with https://github.com/awesomeWM/awesome/pull/2289
 -- TODO: Do not start two processes per second (well, actually six, but awesome only interacts with two of them)
-gears.timer.start_new(1, function()
-    collectgarbage("step", 1000)
-        return true
-    end)
+-- gears.timer.start_new(1, function()
+--     collectgarbage("step", 1000)
+--         return true
+--     end)
