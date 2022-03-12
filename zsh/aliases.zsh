@@ -13,6 +13,7 @@ alias free='free -h'
 alias g='git'
 alias m='mutt'
 alias steam='flatpak run com.valvesoftware.Steam'
+alias elabc='docker exec -it dev-web-1'
 
 # custom aliases
 alias serve='python -m http.server 8888'
