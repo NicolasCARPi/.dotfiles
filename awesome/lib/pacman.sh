@@ -6,8 +6,6 @@
 
 # Total number of packages needing upgrade
 n=$(pacman -Qu | wc -l)
-# audacity blocked update
-n=$((n-1))
 # If there is nothing to upgrade, print nothing
 if [ "$n" == 0 ]; then
     #echo "[☺]"
