@@ -42,10 +42,10 @@ export dev=~/.dev
 export t=/mnt/data/
 
 # before it was d for Desktop
-if [[ $(hostname) == "ryzen" ]]; then
-    export d=~
-else
+if [[ $(hostname) == "neon" ]]; then
     export d=~/cloud/tmp
+else
+    export d=~
 fi
 alias y='docker exec -it dev-web-1 yarn'
 alias cmp='docker exec -it dev-web-1 composer'
