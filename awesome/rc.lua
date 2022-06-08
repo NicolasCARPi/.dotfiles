@@ -330,10 +330,23 @@ globalkeys = gears.table.join(
     -- Standard program
 
     -- ktr shortcuts
+    -- screen brightness (see also the udev rules and add user to video group)
+    awful.key({ }, "XF86MonBrightnessDown", function ()
+        awful.util.spawn("xbacklight -dec 15") end),
+    awful.key({ }, "XF86MonBrightnessUp", function ()
+        awful.util.spawn("xbacklight -inc 15") end),
+    -- volume
+    awful.key({ }, "XF86AudioLowerVolume", function ()
+        awful.util.spawn("pamixer --decrease 5") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function ()
+        awful.util.spawn("pamixer --increase 5") end),
+    awful.key({ }, "XF86AudioMute", function ()
+        awful.util.spawn("pamixer --toggle-mute") end),
+
     awful.key({ modkey,           }, "space", function () awful.util.spawn("toggle.sh") end,
             {description = "toggle music", group = "utils"}),
     -- $ to lock screen with slock
-    awful.key({ modkey,           }, "$", function () awful.util.spawn("lock.sh") end,
+    awful.key({ modkey,           }, "$", function () awful.util.spawn("slock") end,
             {description = "lock screen", group = "utils"}),
     -- k to kill player
     awful.key({ modkey,           }, "k", function () awful.util.spawn("killall -9 vlc") end,

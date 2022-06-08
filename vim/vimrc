@@ -24,6 +24,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'cespare/vim-toml'
 Plugin 'shawncplus/phpcomplete.vim'
 "Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'hashivim/vim-terraform'
 
 "let g:tex_flavor = 'latex'
 

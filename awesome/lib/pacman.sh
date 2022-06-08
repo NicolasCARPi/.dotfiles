@@ -19,3 +19,7 @@ fi
 echo -n "|"
 echo -n "$(free -hm|grep Mem|awk '{print $3}')"
 echo -n "|"
+
+battery=$(acpi|awk -F ': ' '{print $2}')
+battery_level=$(echo "$battery"|awk '{print $2}'|tr -d ',')
+echo "$battery_level"

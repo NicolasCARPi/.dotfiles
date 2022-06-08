@@ -36,6 +36,7 @@ alias tf='terraform'
 alias mutt='~/.bin/mount-share.sh 2>/dev/null && cd $d && mutt && clear'
 alias fiji='~/.opt/Fiji.app/ImageJ-linux64'
 alias minecraft='~/.opt/minecraft-launcher/minecraft-launcher'
+alias pandock='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/core'
 
 # exported variables
 export dev=~/.dev
