@@ -176,6 +176,7 @@ function p {
 # other conf files
 # if file is here and is readable, load it
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
+[[ -r ${HOME}/.zsh/local.zsh ]] && source ${HOME}/.zsh/local.zsh
 [[ -r ${HOME}/.zsh/tmuxinator.zsh ]] && source ${HOME}/.zsh/tmuxinator.zsh
 
 if [ "$TERM" != "linux" ] ; then

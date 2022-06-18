@@ -21,9 +21,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'lervag/vimtex'
-Plugin 'cespare/vim-toml'
+Plugin 'hashivim/vim-terraform'
 Plugin 'shawncplus/phpcomplete.vim'
 "Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'fatih/vim-go'
 
 "let g:tex_flavor = 'latex'
 
@@ -70,6 +71,7 @@ let g:ycm_key_list_previous_completion = ['<C-s>']
 syntax on " syntax highlighting
 set background=dark " dark background
 colorscheme ktr " colorscheme
+highlight SpecialKey ctermbg=black
 
 filetype plugin indent on " load filetype-specific indent files
 " Templates
@@ -227,7 +229,7 @@ set softtabstop=4 " number of spaces in tab when editing
 set shiftwidth=4
 set expandtab " tabs are spaces
 "set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-set listchars=tab:▷⋅
+set listchars=tab:\ \ 
 "set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
 "\ [%l/%L\ (%p%%)
 

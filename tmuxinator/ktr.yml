@@ -38,10 +38,10 @@ windows:
       layout: main-vertical
       panes:
         - cd $dev/elabimg
-  - apidoc:
+  - infra:
       layout: main-vertical
       panes:
-        - cd $dev/apidoc
+        - cd $dev/infra
   - malle:
       layout: main-vertical
       panes:
