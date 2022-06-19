@@ -59,14 +59,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 map <C-t> <Nop>
 " disable ctrl-s
 map <C-s> <Nop>
+let g:ycm_key_list_select_completion = ['<C-t>']
+let g:ycm_key_list_previous_completion = ['<C-s>']
 
-" map W to w
+" map W to w to avoid error when mistakenly typing :W instead of :w
 :command W w
 
 :autocmd FileType php noremap <C-L> :!php -l %<CR>
-
-let g:ycm_key_list_select_completion = ['<C-t>']
-let g:ycm_key_list_previous_completion = ['<C-s>']
 
 syntax on " syntax highlighting
 set background=dark " dark background
