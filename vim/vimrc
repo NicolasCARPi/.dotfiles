@@ -111,7 +111,8 @@ imap <silent> <C-p> <esc><C-p>
 " disable X as I never use encryption, but sometime type X instead of x to save & quit
 cnoremap <expr> X (getcmdtype() is# ':' && empty(getcmdline())) ? 'x' : 'X'
 
-" column selection is ctrl shift V
+" use q for visual block mode instead of ctrl-shift-v that clashes with tmux escape binding
+nnoremap q <c-v>
 
 let mapleader="," " leader is comma
 
