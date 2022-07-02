@@ -51,8 +51,10 @@ else
 fi
 
 # PATH
-PATH=~/.bin:~/.opt:~/.go/bin:~/.gem/ruby/2.7.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
-PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin
+NPM_PACKAGES="${HOME}/.npm-global"
+
+PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.gem/ruby/3.0.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
+PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin:$NPM_PACKAGES/bin
 export PATH
 
 # to have nice colors in ls
@@ -92,11 +94,15 @@ export GOPATH=~/.go
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
 # pyenv stuff
-export PYENV_ROOT=$HOME/.pyenv
+eval "$(pyenv init -)"
+
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
 # R
 export R_LIBS=~/.R/libs
+
+# cypress
+export CYPRESS_CRASH_REPORTS=0
 
 # autocomplete
 # https://github.com/tarruda/zsh-autosuggestions
@@ -105,34 +111,34 @@ source ~/.zsh/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
 
 ## ls after cd
-function chpwd() {
+function chpwd {
     emulate -LR zsh
     ls --color=auto
 }
 
 # extract command
-function e () {
-    if [ -f $1 ] ; then
-        case $1 in
-        *.tar.bz2) tar xvjf $1 ;;
-        *.tar.gz) tar xvzf $1 ;;
-        *.bz2) bunzip2 $1 ;;
-        *.rar) unrar x $1 ;;
-        *.gz) gunzip $1 ;;
-        *.tar) tar xvf $1 ;;
-        *.tbz2) tar xvjf $1 ;;
-        *.tgz) tar xvzf $1 ;;
-        *.zip) 7z x $1 ;;
-        *.Z) uncompress $1 ;;
-        *.7z) 7z x $1 ;;
-        *.tar.xz) tar xvJf $1 ;;
-        *.xz) unlzma $1 ;;
-        *) echo "wtf is that shit ?? '$1'...";;
-
-        esac
-    else
+function e {
+    if [ ! -f "$1" ] ; then
         echo "'$1' is not a fucking file !"
+        return 1
     fi
+    case "$1" in
+    *.tar.bz2) tar xvjf "$1" ;;
+    *.tar.gz) tar xvzf "$1" ;;
+    *.bz2) bunzip2 "$1" ;;
+    *.rar) unrar x "$1" ;;
+    *.gz) gunzip "$1" ;;
+    *.tar) tar xvf "$1" ;;
+    *.tbz2) tar xvjf "$1" ;;
+    *.tgz) tar xvzf "$1" ;;
+    *.zip) 7z x "$1" ;;
+    *.Z) uncompress "$1" ;;
+    *.7z) 7z x "$1" ;;
+    *.tar.xz) tar xvJf "$1" ;;
+    *.xz) unxz "$1" ;;
+    *) echo "wtf is that shit ?? '$1'...";;
+
+    esac
 }
 
 # other conf files

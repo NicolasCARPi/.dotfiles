@@ -6,7 +6,6 @@
 
 # Total number of packages needing upgrade
 n=$(pacman -Qu | wc -l)
-
 # If there is nothing to upgrade, print nothing
 if [ "$n" == 0 ]; then
     #echo "[☺]"

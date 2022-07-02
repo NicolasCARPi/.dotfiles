@@ -56,14 +56,14 @@ end
 volumebar:connect_signal("button::press", function(_,_,_,button)
     -- scroll up
     -- if (button == 4)     then awful.spawn("amixer set Master 2dB+", false)
-    if (button == 4)     then awful.spawn("pactl set-sink-volume alsa_output.pci-0000_2f_00.4.analog-stereo +3%", false)
+    if (button == 4)     then spawn.easy_async("pactl set-sink-volume alsa_output.pci-0000_2f_00.4.analog-stereo +3%", function() end)
     -- scroll down
     -- elseif (button == 5) then awful.spawn("amixer set Master 2dB-", false)
-    elseif (button == 5) then awful.spawn("pactl set-sink-volume alsa_output.pci-0000_2f_00.4.analog-stereo -3%", false)
+    elseif (button == 5) then spawn.easy_async("pactl set-sink-volume alsa_output.pci-0000_2f_00.4.analog-stereo -3%", function() end)
     -- left click
-    elseif (button == 1) then awful.spawn("mpc toggle", false)
+    elseif (button == 1) then spawn.easy_async("mpc toggle", function() end)
     -- right click
-    elseif (button == 3) then awful.spawn("mpc stop", false)
+    elseif (button == 3) then spawn.easy_async("mpc stop", function() end)
     end
 
     spawn.easy_async(request_command, function(stdout, stderr, exitreason, exitcode)

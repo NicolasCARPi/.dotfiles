@@ -21,9 +21,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'lervag/vimtex'
-Plugin 'cespare/vim-toml'
+Plugin 'hashivim/vim-terraform'
 Plugin 'shawncplus/phpcomplete.vim'
 "Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'fatih/vim-go'
 
 "let g:tex_flavor = 'latex'
 
@@ -42,13 +43,15 @@ let g:ctrlp_prompt_mappings = {
   \ }
 
 " configure better whitespace plugin to allow markdown
-let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help']
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help', 'mail']
 
 " YCM CONFIG
 " fix python2/3 for YCM
  let g:ycm_server_python_interpreter = '/usr/bin/python'
 " disable the doc on hover
 let g:ycm_auto_hover = ''
+" close split window after insertion
+let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_server_python_interpreter = '/home/ktr/.pyenv/versions/3.7.5/bin/python'
 " fix the Tab key being used
 " use C-t and C-s to go through the list
@@ -56,17 +59,25 @@ let g:ycm_auto_hover = ''
 map <C-t> <Nop>
 " disable ctrl-s
 map <C-s> <Nop>
-
 let g:ycm_key_list_select_completion = ['<C-t>']
 let g:ycm_key_list_previous_completion = ['<C-s>']
+
+" map W to w to avoid error when mistakenly typing :W instead of :w
+:command W w
+
+:autocmd FileType php noremap <C-L> :!php -l %<CR>
 
 syntax on " syntax highlighting
 set background=dark " dark background
 colorscheme ktr " colorscheme
+highlight SpecialKey ctermbg=black
 
 filetype plugin indent on " load filetype-specific indent files
 " Templates
 "au bufNewFile *.sh 0r ~/.vim/templates/bash.sh
+
+" don't keep traces for ansible-vault stuff
+autocmd BufRead,BufNewFile ~/.ansible/tmp/* set noswapfile nobackup nowritebackup
 
 " show espaces insécables
 set listchars=nbsp:_
@@ -100,7 +111,8 @@ imap <silent> <C-p> <esc><C-p>
 " disable X as I never use encryption, but sometime type X instead of x to save & quit
 cnoremap <expr> X (getcmdtype() is# ':' && empty(getcmdline())) ? 'x' : 'X'
 
-" column selection is ctrl shift V
+" use q for visual block mode instead of ctrl-shift-v that clashes with tmux escape binding
+nnoremap q <c-v>
 
 let mapleader="," " leader is comma
 
@@ -198,6 +210,8 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 au FileType twig set syntax=html
 au FileType html.twig set syntax=html
 au FileType html.eex set syntax=html
+autocmd BufNewFile,BufRead *.hcl setfiletype hcl
+au FileType hcl set syntax=conf
 
 " STATUS LINE
 set laststatus=2
@@ -215,7 +229,7 @@ set softtabstop=4 " number of spaces in tab when editing
 set shiftwidth=4
 set expandtab " tabs are spaces
 "set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-set listchars=tab:▷⋅
+set listchars=tab:\ \ 
 "set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
 "\ [%l/%L\ (%p%%)
 
