@@ -9,7 +9,7 @@ let g:colors_name = "ktr"
 " General colors
 hi Normal	ctermfg=gray guifg=peachpuff3 guibg=black
 hi Directory	term=bold ctermfg=blue guifg=royalblue
-hi ErrorMsg	term=standout ctermfg=white ctermbg=red guifg=white guibg=red3
+hi ErrorMsg	term=standout ctermfg=white ctermbg=red guifg=white guibg=white
 hi NonText	term=bold ctermfg=white guibg=gray3 guifg=gray20
 hi SpecialKey	term=bold ctermfg=white guifg=gray30
 hi LineNr	ctermfg=white guifg=ivory4 guibg=gray4
@@ -81,3 +81,10 @@ hi TabLine ctermfg=Gray ctermbg=Black cterm=none
 hi TabLineSel ctermfg=Green ctermbg=Black cterm=bold
 hi TabLineFill ctermfg=White ctermbg=White cterm=none
 
+" autocomplete menu
+hi Pmenu ctermfg=White ctermbg=Black
+hi PmenuSel ctermfg=10 ctermfg=Black
+hi CocListSearch ctermfg=10
+
+" gitgutter
+hi SignColumn ctermbg=none
