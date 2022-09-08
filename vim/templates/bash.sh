@@ -1,5 +1,1 @@
-#!/bin/sh
-# File :
-# URL :
-# Author : kooothor
-# Version :
+#!/usr/bin/env bash

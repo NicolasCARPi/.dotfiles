@@ -1,6 +1,7 @@
 vim/.netrwhist
 vim/view/
 vim/backup/
+vim/plugged/
 vim/undodir/
 config/mpd/database
 config/mpd/log
