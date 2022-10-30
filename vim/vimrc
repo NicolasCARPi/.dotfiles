@@ -94,6 +94,9 @@ nmap <silent> <C-p> :tabprev<CR>
 imap <silent> <C-n> <esc><C-n>
 imap <silent> <C-p> <esc><C-p>
 
+" F2 to toggle paste mode
+set pastetoggle=<F2>
+
 " disable X as I never use encryption, but sometime type X instead of x to save & quit
 cnoremap <expr> X (getcmdtype() is# ':' && empty(getcmdline())) ? 'x' : 'X'
 
