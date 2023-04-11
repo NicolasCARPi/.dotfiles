@@ -51,4 +51,4 @@ fi
 alias y='docker exec -it dev-web-1 yarn'
 alias cmp='docker exec -it dev-web-1 composer'
 alias htop='btop'
-alias poedit='/var/lib/snapd/snap/bin/poedit'
+alias poedit='sudo systemctl start snapd && /var/lib/snapd/snap/bin/poedit'

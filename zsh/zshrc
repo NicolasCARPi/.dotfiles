@@ -8,6 +8,7 @@ SAVEHIST=100000
 
 # autocompletion
 export fpath=(~/.zsh/functions $fpath)
+autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 # load colors
 [[ -r ${HOME}/.zsh/colors.zsh ]] && source ${HOME}/.zsh/colors.zsh
@@ -202,3 +203,5 @@ PERL_MM_OPT="INSTALL_BASE=/home/ktr/perl5"; export PERL_MM_OPT;
 
 # Scaleway CLI autocomplete initialization.
 eval "$(scw autocomplete script shell=zsh)"
+# aws cli completion
+complete -C '/usr/bin/aws_completer' aws
