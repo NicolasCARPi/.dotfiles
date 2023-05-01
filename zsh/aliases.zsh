@@ -29,7 +29,8 @@ alias tv='vim /mnt/data/var/docs/tv.txt'
 alias utf8chk='find . -type f -exec file -bi {} \; -print|less'
 alias rss='newsboat'
 alias irc='weechat'
-alias dc='docker-compose'
+alias dc='docker compose'
+alias d='docker'
 alias tf='terraform'
 
 # apps
@@ -49,3 +50,5 @@ else
 fi
 alias y='docker exec -it dev-web-1 yarn'
 alias cmp='docker exec -it dev-web-1 composer'
+alias htop='btop'
+alias poedit='sudo systemctl start snapd && /var/lib/snapd/snap/bin/poedit'
