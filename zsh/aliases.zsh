@@ -29,7 +29,7 @@ alias tv='vim /mnt/data/var/docs/tv.txt'
 alias utf8chk='find . -type f -exec file -bi {} \; -print|less'
 alias rss='newsboat'
 alias irc='weechat'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias d='docker'
 alias tf='terraform'
 
