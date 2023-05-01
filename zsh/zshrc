@@ -159,6 +159,6 @@ PERL_MB_OPT="--install_base \"/home/ktr/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ktr/perl5"; export PERL_MM_OPT;
 
 # Scaleway CLI autocomplete initialization.
-eval "$(scw autocomplete script shell=zsh)"
+#SERVER DISABLE eval "$(scw autocomplete script shell=zsh)"
 # aws cli completion
-complete -C '/usr/bin/aws_completer' aws
+#SERVER DISABLE complete -C '/usr/bin/aws_completer' aws
