@@ -64,8 +64,6 @@ PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.gem/ruby/3.0.0/bin:~/.yarn/bin:~/.
 PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin:$NPM_PACKAGES/bin
 export PATH
 
-export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
-
 # bundle as user
 export BUNDLE_PATH=~/.bundle
 # GIT PROMPT
