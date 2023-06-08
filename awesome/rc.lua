@@ -671,9 +671,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- fix memory leak
--- TODO: Remove this once I have a version of awesome with https://github.com/awesomeWM/awesome/pull/2289
--- TODO: Do not start two processes per second (well, actually six, but awesome only interacts with two of them)
--- gears.timer.start_new(1, function()
---     collectgarbage("step", 1000)
---         return true
---     end)
+-- Run garbage collector regularly to prevent memory leaks
+-- from https://wiki.archlinux.org/title/awesome
+gears.timer {
+       timeout = 30,
+       autostart = true,
+       callback = function() collectgarbage() end
+}

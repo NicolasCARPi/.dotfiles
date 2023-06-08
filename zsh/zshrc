@@ -60,7 +60,7 @@ fi
 # PATH
 NPM_PACKAGES="${HOME}/.npm-global"
 
-PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.gem/ruby/3.0.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
+PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.local/share/gem/ruby/3.0.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
 PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin:$NPM_PACKAGES/bin
 export PATH
 
@@ -109,7 +109,7 @@ export GOPATH=~/.go
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
 # pyenv stuff
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
@@ -167,11 +167,6 @@ function e {
     esac
 }
 
-# print document
-function p {
-    lp -o fit-to-page -o media=A4 -o sides=two-sided-long-edge -d PielPrinter "$1"
-}
-
 # other conf files
 # if file is here and is readable, load it
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
@@ -200,6 +195,6 @@ PERL_MB_OPT="--install_base \"/home/ktr/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ktr/perl5"; export PERL_MM_OPT;
 
 # Scaleway CLI autocomplete initialization.
-eval "$(scw autocomplete script shell=zsh)"
+#eval "$(scw autocomplete script shell=zsh)"
 # aws cli completion
-complete -C '/usr/bin/aws_completer' aws
+#complete -C '/usr/bin/aws_completer' aws

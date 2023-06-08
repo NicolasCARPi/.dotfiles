@@ -16,7 +16,7 @@ local watch = require("awful.widget.watch")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
-local request_command = "amixer get Master"
+local request_command = "amixer -c 1 get Master"
 
 local bar_color = beautiful.fg_normal
 local mute_color = "#ff0000"
