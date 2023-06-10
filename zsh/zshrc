@@ -175,11 +175,13 @@ function e {
 
 if [ "$TERM" != "linux" ] ; then
     if ! tmux list-sessions > /dev/null 2>&1; then
-        # don't ask again if the key is already loaded
-        if ! ssh-add -l > /dev/null; then
-            ssh-add ~/.ssh/id_ed25519
+        if [ -r ~/.ssh/id_ed25519 ]; then
+            # don't ask again if the key is already loaded
+            if ! ssh-add -l > /dev/null; then
+                ssh-add ~/.ssh/id_ed25519
+            fi
         fi
-        if [ -r ${HOME}/.zsh/tmuxinator.zsh ]; then
+        if command -v tmuxinator >/dev/null 2>&1; then
             tmuxinator ktr
         else
             tmux
