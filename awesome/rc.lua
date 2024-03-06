@@ -53,6 +53,7 @@ beautiful.init(active_theme .. "/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt -b 0"
+-- terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -569,9 +570,17 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
+    -- fix zoom notifications not floating: this will impact all zoom window, so the main one needs to be set non floating upon start
+    -- FIXME if one day we can target only the notification windows
+    { rule = { class = "zoom", type = "normal"},
+        properties = { floating = true }
+    },
+
+
     -- xvidcap should stay ontop
     { rule = { class = "Xvidcap" },
-      properties = { ontop = true } },
+      properties = { ontop = true }
+    },
     -- when in TV mode use this
     -- { rule = { class = "MPlayer" },
       -- properties = { ontop = true } },

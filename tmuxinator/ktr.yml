@@ -29,10 +29,9 @@ windows:
         - cd $dev/elabftw
         - cd $dev/elabftw
   - build:
-      layout: 2296,239x68,0,0[239x42,0,0{173x42,0,0,2,65x42,174,0,21},239x25,0,43,6
+      layout: 352e,239x68,0,0[239x47,0,0,0,239x20,0,48,1]
       panes:
         - cd $dev/elabftw; y watchjs
-        - cd $dev/elabftw; y watchcss
         - docker logs -f elabftw 1>/dev/null
   - img:
       layout: main-vertical
