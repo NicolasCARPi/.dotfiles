@@ -10,6 +10,7 @@ call plug#begin("~/.vim/plugged")
 
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
@@ -296,3 +297,29 @@ imap <C-tab> <Esc>:tabnext<CR>i
 "imap <C-t> <Esc>:tabnew<CR>
 map <S-h> gT
 map <S-l> gt
+
+function! MoveDeclareStrictTypes()
+    " Look for the declare statement and capture the entire line
+    let l:declareLine = search('^\s*declare\s*(\s*strict_types\s*=\s*1\s*)\s*;\s*$', 'nw')
+    if l:declareLine == 0
+        echo "No declare(strict_types=1); found in this file."
+        return
+    endif
+
+    " Capture the content of the declare line
+    let l:declareContent = getline(l:declareLine)
+    " Delete the original declare line
+    execute l:declareLine . 'd'
+
+    " Look for the file-level docblock ending
+    let l:docBlockEndLine = search('\s\*/', 'nw')
+    if l:docBlockEndLine == 0
+        echo "No file-level docblock end found."
+        return
+    endif
+
+    " Insert the declare line after the docblock
+    let l:insertLine = l:docBlockEndLine + 1
+    call append(l:insertLine, l:declareContent)
+    echo "Moved declare(strict_types=1); after the file-level docblock."
+endfunction
