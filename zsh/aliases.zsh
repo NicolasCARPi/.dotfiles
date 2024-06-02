@@ -13,7 +13,7 @@ alias free='free -h'
 alias g='git'
 alias m='mutt'
 alias steam='flatpak run com.valvesoftware.Steam'
-alias elabc='docker exec -it dev-web-1'
+alias elabc='docker exec -it elabftw'
 
 # custom aliases
 alias serve='python -m http.server 8888'
@@ -32,6 +32,7 @@ alias irc='weechat'
 alias dc='docker compose'
 alias d='docker'
 alias tf='terraform'
+alias sudo='doas'
 
 # apps
 alias mutt='~/.bin/mount-share.sh 2>/dev/null && cd $d && mutt && clear'
@@ -43,11 +44,10 @@ export dev=~/.dev
 export t=/mnt/data/
 
 # before it was d for Desktop
-if [[ $(hostname) == "ryzen" ]]; then
+if [[ $(hostnamectl hostname) == "ryzen" ]]; then
     export d=~
 else
     export d=~/cloud/tmp
 fi
-alias y='docker exec -it dev-web-1 yarn'
-alias cmp='docker exec -it dev-web-1 composer'
+alias y='docker exec -it elabftw yarn'
 alias poedit='sudo systemctl start snapd && /var/lib/snapd/snap/bin/poedit'

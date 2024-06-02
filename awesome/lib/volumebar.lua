@@ -16,7 +16,9 @@ local watch = require("awful.widget.watch")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
-local request_command = "amixer get Master"
+-- Note: this command doesn't work, maybe because of the { or $... So we parse the full output in lua
+-- local request_command = "pactl list sinks | grep 'Volume:' | awk 'NR==1{print $5}'"
+local request_command = "pactl list sinks"
 
 local bar_color = beautiful.fg_normal
 local mute_color = "#ff0000"
@@ -38,19 +40,9 @@ local volumebar = wibox.widget {
     widget = wibox.widget.progressbar
 }
 
-local update_graphic = function(widget, stdout, _, _, _)
-    local mute = string.match(stdout, "%[(o%D%D?)%]")
-    local volume = string.match(stdout, "(%d?%d?%d)%%")
-    volume = tonumber(string.format("% 3d", volume))
-
-    widget.value = volume / 100;
-    --if mute == "off" then
-    --    widget.color = mute_color
-    --    widget.value = volume / 100;
-    --else
-    --    widget.color = bar_color
-    --    widget.value = volume / 100;
-    --end
+local update_graphic = function(widget, stdout, _, _, exitcode)
+    local volume = stdout:match("%s(%d+)%%")
+    widget.value = tonumber(volume) / 100
 end
 
 volumebar:connect_signal("button::press", function(_,_,_,button)
@@ -71,6 +63,6 @@ volumebar:connect_signal("button::press", function(_,_,_,button)
     end)
 end)
 
-watch(request_command, 1, update_graphic, volumebar)
+watch(request_command, 5, update_graphic, volumebar)
 
 return volumebar

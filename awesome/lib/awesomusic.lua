@@ -3,10 +3,8 @@
 -- https://github.com/NicolasCARPi/.dotfiles
 -- requires "mpc" and "amixer"
 
-local awful = require("awful")
 local wibox = require("wibox")
 local watch = require("awful.widget.watch")
-local naughty = require("naughty")
 
 local awesomusic = wibox.widget {
     paddings = 250,

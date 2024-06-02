@@ -6,7 +6,7 @@ URxvt*buffered: true
 URxvt*foreground: #00FF00
 URxvt*cursorColor: yellow
 URxvt*underlineColor: #8FC45A
-URxvt*font:xft:Bitstream Vera Sans Mono:pixelsize=12:antialias=true
+URxvt*font:xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=true
 !URxvt*font: xft:Source\ Code\ Pro\ for\ Powerline,Source\ Code\ Pro\ Medium:size=11
 !URxvt*font:                 xft:Inconsolata Nerd Font Mono:pixelsize=12:minspace=False, xft:DejaVu Sans:pixelsize=18
 !URxvt*boldFont:             xft:Inconsolata Nerd Font Mono:pixelsize=12:minspace=False, xft:DejaVu Sans:pixelsize=12
@@ -26,13 +26,14 @@ URxvt*secondaryScroll:  true
 !-------------
 URxvt*scrollBar: false
 URxvt.perl-ext-common: default,tabbed,matcher,resize-font
-URxvt.perl-ext: default,url-select
-URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.perl-ext: default,url-select
+URxvt.perl-ext: default
+!URxvt.keysym.M-u: perl:url-select:select_next
 # launch in firefox
-URxvt.url-select.launcher: /usr/bin/firefox
-URxvt.url-select.underline: true
+!URxvt.url-select.launcher: /usr/bin/firefox
+!URxvt.url-select.underline: true
 # allow click on match to activate
-URxvt.matcher.button: 1
+!URxvt.matcher.button: 1
 
 !-----------
 !tabs colors

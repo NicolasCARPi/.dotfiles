@@ -8,20 +8,24 @@ set nocompatible
 " https://github.com/junegunn/vim-plug
 call plug#begin("~/.vim/plugged")
 
-Plug 'tmhedberg/SimpylFold'
-Plug 'vim-syntastic/syntastic'
+" https://github.com/ntpeters/vim-better-whitespace
 Plug 'ntpeters/vim-better-whitespace'
+" https://github.com/ctrlpvim/ctrlp.vim
 Plug 'ctrlpvim/ctrlp.vim'
+" https://github.com/airblade/vim-gitgutter
 Plug 'airblade/vim-gitgutter'
-Plug 'editorconfig/editorconfig-vim'
+" https://github.com/hashivim/vim-terraform
 Plug 'hashivim/vim-terraform'
+" https://github.com/fatih/vim-go
 Plug 'fatih/vim-go'
+" https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" https://github.com/yaegassy/coc-intelephense
 Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 
-" CtrlP config
+" CTRLP CONFIG
 " open it
 let g:ctrlp_map = '<c-c>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -146,11 +150,6 @@ set incsearch " do incremental searching
 "set number    "enable line numbering
 "set cursorline " highlight current line
 
-
-" For crontab bug in Mac OS X (crontab temp file must be edited in place)
-au FileType crontab set nobackup nowritebackup
-
-
 " FOLDS
 set foldenable
 set foldmethod=indent
@@ -163,37 +162,16 @@ autocmd BufWinEnter *.* silent loadview
 " get space to show/hide folds
 nnoremap <Space> za
 
-" show python docstring in the fold
-let g:SimpylFold_docstring_preview = 1
 " END FOLDS
 
 " gundo http://sjl.bitbucket.org/gundo.vim/
 " ,u
 " requires vim to be compiled with +python
-nnoremap <leader>u :GundoToggle<CR>
+" nnoremap <leader>u :GundoToggle<CR>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2', 'phpmd']
-" disable for python
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
-"function! FindConfig(prefix, what, where)
-"    let cfg = findfile(a:what, escape(a:where, ' ') . ';')
-"    return cfg !=# '' ? ' ' . a:prefix . ' ' . shellescape(cfg) : ''
-"endfunction
-
-"autocmd FileType javascript let b:syntastic_javascript_jscs_args =
-"    \ get(g:, 'syntastic_javascript_jscs_args', '') .
-"    \ FindConfig('-c', '.jshintrc', expand('<afile>:p:h', 1))
-
-" Ctrl-t to close HTML tags
-"au FileType html,xml,xsl,php,erb source ~/.vim/bundle/closetag.vim
 
 " use html syntax for twig templates
 au FileType twig set syntax=html
@@ -296,3 +274,29 @@ imap <C-tab> <Esc>:tabnext<CR>i
 "imap <C-t> <Esc>:tabnew<CR>
 map <S-h> gT
 map <S-l> gt
+
+function! MoveDeclareStrictTypes()
+    " Look for the declare statement and capture the entire line
+    let l:declareLine = search('^\s*declare\s*(\s*strict_types\s*=\s*1\s*)\s*;\s*$', 'nw')
+    if l:declareLine == 0
+        echo "No declare(strict_types=1); found in this file."
+        return
+    endif
+
+    " Capture the content of the declare line
+    let l:declareContent = getline(l:declareLine)
+    " Delete the original declare line
+    execute l:declareLine . 'd'
+
+    " Look for the file-level docblock ending
+    let l:docBlockEndLine = search('\s\*/', 'nw')
+    if l:docBlockEndLine == 0
+        echo "No file-level docblock end found."
+        return
+    endif
+
+    " Insert the declare line after the docblock
+    let l:insertLine = l:docBlockEndLine + 1
+    call append(l:insertLine, l:declareContent)
+    echo "Moved declare(strict_types=1); after the file-level docblock."
+endfunction
