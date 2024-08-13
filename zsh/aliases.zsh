@@ -51,3 +51,4 @@ else
 fi
 alias y='docker exec -it elabftw yarn'
 alias poedit='sudo systemctl start snapd && /var/lib/snapd/snap/bin/poedit'
+alias pc='pass -c'

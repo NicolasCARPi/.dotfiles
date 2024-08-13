@@ -36,3 +36,5 @@
     new = white black bold
 [pull]
     rebase = false
+[credential]
+	helper = store
