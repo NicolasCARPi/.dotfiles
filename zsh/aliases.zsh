@@ -14,6 +14,8 @@ alias g='git'
 alias m='mutt'
 alias steam='flatpak run com.valvesoftware.Steam'
 alias elabc='docker exec -it elabftw'
+# add colors to ip
+alias ip='ip -c'
 
 # custom aliases
 alias serve='python -m http.server 8888'

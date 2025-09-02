@@ -58,10 +58,7 @@ else
 fi
 
 # PATH
-NPM_PACKAGES="${HOME}/.npm-global"
-
-PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.local/share/gem/ruby/3.2.0/bin:~/.yarn/bin:~/.npm-global/bin:~/.config/composer/vendor/bin:$(pwd)/node_modules/.bin:~/.local/bin:$PATH
-PATH=$PATH:~/.dev/elabftw/vendor/bin:~/.dev/sonar-scanner-3.3.0.1492-linux/bin:$PYENV_ROOT/bin:$NPM_PACKAGES/bin
+PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.local/share/gem/ruby/3.4.0/bin:~/.yarn/bin:~/.local/bin:$PATH
 export PATH
 
 # bundle as user
@@ -108,8 +105,6 @@ export GOPATH=~/.go
 
 # python startup
 export PYTHONSTARTUP=$HOME/.pystartup
-# pyenv stuff
-#eval "$(pyenv init -)"
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 

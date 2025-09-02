@@ -30,6 +30,7 @@
     summary = true
 [push]
     default = tracking
+    autoSetupRemote = true
 [core]
     excludesfile = /home/ktr/.gitignore
 [color "diff"]

@@ -48,7 +48,7 @@ inoremap <expr> <C-s> coc#pum#visible() ? coc#pum#prev(1) : "\<C-s>"
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " whitelist filetypes
 function! s:enable_coc_for_type()
-    let l:filesuffix_whitelist = ['php', 'py', 'lua', 'go', 'vim', 'sh', 'py', 'ts', 'js']
+    let l:filesuffix_whitelist = ['php', 'py', 'lua', 'go', 'vim', 'sh', 'py', 'ts', 'js', 'jsx', 'tsx']
 	if index(l:filesuffix_whitelist, expand('%:e')) == -1
 		let b:coc_enabled = 0
 	endif
@@ -151,16 +151,16 @@ set incsearch " do incremental searching
 "set cursorline " highlight current line
 
 " FOLDS
-set foldenable
-set foldmethod=indent
-set foldlevel=99
-
-" save/restore foldings
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
-
-" get space to show/hide folds
-nnoremap <Space> za
+" set foldenable
+" set foldmethod=indent
+" set foldlevel=99
+"
+" " save/restore foldings
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
+"
+" " get space to show/hide folds
+" nnoremap <Space> za
 
 " END FOLDS
 
