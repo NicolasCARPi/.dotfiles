@@ -35,6 +35,7 @@ setopt noglobdots
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^f' edit-command-line
+bindkey '^R' history-incremental-search-backward
 
 # disable software flow control
 stty -ixon
