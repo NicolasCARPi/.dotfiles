@@ -163,6 +163,11 @@ function e {
     esac
 }
 
+function ssha {
+    pass -c "$1+${USER}"
+    ssh -tt "$1" sudo su -
+}
+
 # other conf files
 # if file is here and is readable, load it
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
