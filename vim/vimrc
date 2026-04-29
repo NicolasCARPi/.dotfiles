@@ -22,8 +22,14 @@ Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " https://github.com/yaegassy/coc-intelephense
 Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+" https://github.com/leafOfTree/vim-svelte-plugin?tab=readme-ov-file
+Plug 'leafOfTree/vim-svelte-plugin'
 
 call plug#end()
+
+" svelte
+let g:vim_svelte_plugin_load_full_syntax = 1
+let g:vim_svelte_plugin_use_typescript = 1
 
 " CTRLP CONFIG
 " open it
@@ -48,12 +54,19 @@ inoremap <expr> <C-s> coc#pum#visible() ? coc#pum#prev(1) : "\<C-s>"
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " whitelist filetypes
 function! s:enable_coc_for_type()
-    let l:filesuffix_whitelist = ['php', 'py', 'lua', 'go', 'vim', 'sh', 'py', 'ts', 'js', 'jsx', 'tsx']
+    let l:filesuffix_whitelist = ['php', 'py', 'lua', 'go', 'vim', 'sh', 'py', 'ts', 'js', 'jsx', 'tsx', 'svelte']
 	if index(l:filesuffix_whitelist, expand('%:e')) == -1
 		let b:coc_enabled = 0
 	endif
 endfunction
 autocmd BufRead,BufNewFile * call s:enable_coc_for_type()
+
+" Treat Symfony bin/console as PHP
+augroup php_bin_console
+  autocmd!
+  autocmd BufRead,BufNewFile */bin/console setfiletype php
+  autocmd BufRead,BufNewFile */bin/init setfiletype php
+augroup END
 
 " map W to w to avoid error when mistakenly typing :W instead of :w
 :command W w

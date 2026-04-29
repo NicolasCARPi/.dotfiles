@@ -15,6 +15,7 @@
     d = diff HEAD
     dd = diff --stat HEAD
     g = grep -I
+    cp = cherry-pick
 [color]
     # colors ftw
     branch = auto

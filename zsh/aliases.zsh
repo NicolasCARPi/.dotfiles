@@ -2,7 +2,7 @@
 alias ls='ls --color=auto'
 alias ll='ls -lA'
 alias lll='ls -lA|less'
-alias dodo='cd ~ && fusermount -u .password-store; fusermount -u .share; sudo systemctl suspend'
+alias dodo='cd ~ && fusermount -u /mnt/sierra-pass; fusermount -u /mnt/sierra-share; sudo systemctl suspend'
 alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'

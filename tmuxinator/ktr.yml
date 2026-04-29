@@ -33,10 +33,6 @@ windows:
       panes:
         - cd $dev/elabftw; y watchjs
         - docker logs -f elabftw 1>/dev/null
-  - img:
-      layout: main-vertical
-      panes:
-        - cd $dev/elabimg
   - infra:
       layout: main-vertical
       panes:
