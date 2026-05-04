@@ -50,13 +50,15 @@ export GPG_TTY=$(tty)
 export OWNCLOUD_UPLOAD_CONFLICT_FILES=1
 
 ## PROMPT appearance
+setopt prompt_subst
 #┌─[user@machine:~]-[16:26:07]
 #└─>
-if [ $UID -eq 0 ];then
-    export PROMPT="%{$fg[red]%}┌─[%{$fg[green]%}%n%{$fg[cyan]%}@%{$fg[green]%}%m%{$fg[red]%}:%{$fg[yellow]%}%~%{$fg[red]%}]%{$fg[yellow]%}-%{$fg[red]%}[%{$fg[cyan]%}%*%{$fg[red]%}]%{$reset_color%}%{$reset_color%}"$'\n'"%{$fg[red]%}└─>%{$reset_color%} "
-else
-    export PROMPT="%{$fg[white]%}┌─[%{$fg[green]%}%n%{$fg[cyan]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}]%{$fg[yellow]%}-%{$fg[white]%}[%{$fg[cyan]%}%*%{$fg[white]%}]%{$reset_color%}%{$reset_color%}"$'\n'"%{$fg[white]%}└─>%{$reset_color%} "
-fi
+prompt_user_color="white"
+  if [ $UID -eq 0 ];then
+      prompt_user_color="red"
+  fi
+
+PROMPT="%{$fg[$prompt_user_color]%}┌─[%{$fg[green]%}%n%{$fg[$prompt_user_color]%}@%{$fg[green]%}%m%{$fg[$prompt_user_color]%}:%{$fg[yellow]%}%~%{$fg[$prompt_user_color]%}]%{$fg[yellow]%}-%{$fg[$prompt_user_color]%}[%{$fg[cyan]%}%*%{$fg[$prompt_user_color]%}]%{$reset_color%}%{$reset_color%}"$'\n'"%{$fg[$prompt_user_color]%}└─>%{$reset_color%} "
 
 # PATH
 PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.local/share/gem/ruby/3.4.0/bin:~/.yarn/bin:~/.local/bin:$PATH
@@ -65,7 +67,6 @@ export PATH
 # bundle as user
 export BUNDLE_PATH=~/.bundle
 # GIT PROMPT
-setopt prompt_subst
 source ~/.zsh/git-prompt/gitzsh
 RPROMPT='$(git_super_status)'
 # END GIT PROMPT
@@ -163,11 +164,6 @@ function e {
     esac
 }
 
-function ssha {
-    pass -c "$1+${USER}"
-    ssh -tt "$1" sudo su -
-}
-
 # other conf files
 # if file is here and is readable, load it
 [[ -r ${HOME}/.zsh/aliases.zsh ]] && source ${HOME}/.zsh/aliases.zsh
@@ -190,8 +186,3 @@ if [ "$TERM" != "linux" ] ; then
     fi
 fi
 # /K\
-
-# Scaleway CLI autocomplete initialization.
-#eval "$(scw autocomplete script shell=zsh)"
-# aws cli completion
-#complete -C '/usr/bin/aws_completer' aws
