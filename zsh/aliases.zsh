@@ -2,8 +2,9 @@
 alias ls='ls --color=auto'
 alias ll='ls -lA'
 alias lll='ls -lA|less'
-alias dodo='cd ~ && fusermount -u .password-store; fusermount -u .share; sudo systemctl suspend'
+alias dodo='cd ~ && fusermount -u /mnt/sierra-pass; fusermount -u /mnt/sierra-share; sudo systemctl suspend'
 alias cp='cp -i'
+alias rm='rm -i'
 alias mv='mv -i'
 alias vmi='vim'
 alias v='vim'
@@ -14,6 +15,9 @@ alias g='git'
 alias m='mutt'
 alias steam='flatpak run com.valvesoftware.Steam'
 alias elabc='docker exec -it elabftw'
+alias ops='su - ops'
+# add colors to ip
+alias ip='ip -c'
 
 # custom aliases
 alias serve='python -m http.server 8888'
@@ -51,3 +55,4 @@ else
 fi
 alias y='docker exec -it elabftw yarn'
 alias poedit='sudo systemctl start snapd && /var/lib/snapd/snap/bin/poedit'
+alias pc='pass -c'

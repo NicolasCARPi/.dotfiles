@@ -1,0 +1,24 @@
+{
+  "intelephense.files.associations": [
+    "*.php",
+    "**/bin/console",
+    "**/bin/init"
+  ],
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true,
+  "languageserver": {
+    "svelte-manual": {
+      "command": "svelteserver",
+      "args": ["--stdio"],
+      "filetypes": [
+        "svelte"
+      ],
+      "rootPatterns": [
+        "package.json",
+        "svelte.config.js",
+        "svelte.config.ts",
+        ".git"
+      ]
+    }
+  }
+}

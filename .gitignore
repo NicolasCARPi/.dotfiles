@@ -9,3 +9,4 @@ config/mpd/pid
 config/mpd/state
 config/mpd/sticker.sql
 ncmpcpp/error.log
+newsboat/cache.db
