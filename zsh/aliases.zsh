@@ -36,7 +36,6 @@ alias irc='weechat'
 alias dc='docker compose'
 alias d='docker'
 alias tf='terraform'
-alias sudo='doas'
 
 # apps
 alias mutt='~/.bin/mount-share.sh 2>/dev/null && cd $d && mutt && clear'
