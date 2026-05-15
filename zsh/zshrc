@@ -58,7 +58,7 @@ prompt_user_color="white"
       prompt_user_color="red"
   fi
 
-PROMPT="%{$fg[$prompt_user_color]%}┌─[%{$fg[green]%}%n%{$fg[$prompt_user_color]%}@%{$fg[green]%}%m%{$fg[$prompt_user_color]%}:%{$fg[yellow]%}%~%{$fg[$prompt_user_color]%}]%{$fg[yellow]%}-%{$fg[$prompt_user_color]%}[%{$fg[cyan]%}%*%{$fg[$prompt_user_color]%}]%{$reset_color%}%{$reset_color%}"$'\n'"%{$fg[$prompt_user_color]%}└─>%{$reset_color%} "
+PROMPT="%{$fg[$prompt_user_color]%}┌─[%{$fg[green]%}%n%{$fg[$prompt_user_color]%}@%{$fg[green]%}%m%{$fg[$prompt_user_color]%}:%{$fg[cyan]%}%~%{$fg[$prompt_user_color]%}]%{$fg[yellow]%}-%{$fg[$prompt_user_color]%}[%{$fg[cyan]%}%*%{$fg[$prompt_user_color]%}]%{$reset_color%}%{$reset_color%}"$'\n'"%{$fg[$prompt_user_color]%}└─>%{$reset_color%} "
 
 # PATH
 PATH=~/.bin:~/.opt:~/.go/bin::~/.cargo/bin:~/.local/share/gem/ruby/3.4.0/bin:~/.yarn/bin:~/.local/bin:$PATH
